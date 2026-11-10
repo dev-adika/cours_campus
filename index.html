@@ -1,63 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COURS CAMPUS - Université</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COURS CAMPUS - 1000F Premium</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#0f172a;color:white}
-header{background:#1e293b;padding:20px;text-align:center;position:sticky;top:0}
-header h1{font-size:28px;color:#38bdf8}
-header p{color:#cbd5e1;margin-top:5px}
-.hero{text-align:center;padding:40px 20px}
-.hero h2{font-size:32px;margin-bottom:10px}
-.hero p{color:#94a3b8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px;max-width:1100px;margin:auto}
-.card{background:#1e293b;border-radius:15px;padding:25px;cursor:pointer;border:2px solid transparent;transition:.3s}
-.card:hover{border-color:#38bdf8;transform:translateY(-5px)}
-.card .icon{font-size:40px;margin-bottom:10px}
-.card h3{margin-bottom:8px}
-.card p{color:#94a3b8;font-size:14px;line-height:1.5}
-.card span{display:inline-block;margin-top:15px;background:#38bdf8;color:#0f172a;padding:8px 15px;border-radius:20px;font-weight:bold;font-size:13px}
-#lesson{display:none;max-width:800px;margin:20px auto;background:white;color:#1e293b;padding:30px;border-radius:15px}
-#lesson h2{margin-bottom:10px}
-#lesson h4{margin:20px 0 8px;color:#0284c7}
-#lesson p, #lesson li{line-height:1.7;font-size:15px;margin-bottom:8px}
-#lesson ul{margin-left:20px}
-.quiz{background:#f0f9ff;padding:15px;border-radius:10px;margin-top:20px}
-button{cursor:pointer}
-.back{background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:20px}
-footer{text-align:center;padding:30px;color:#64748b;font-size:13px}
+header{background:#1e293b;padding:20px;text-align:center}
+header h1{color:#38bdf8;font-size:28px}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:15px}
+.stat{background:#1e293b;padding:12px 18px;border-radius:12px;text-align:center}
+.stat b{font-size:20px;color:#facc15;display:block}
+.stat span{font-size:12px;color:#94a3b8}
+.hero{text-align:center;padding:30px 20px}
+.hero h2{font-size:30px}
+.hero p{color:#94a3b8;margin-top:8px}
+.pricing{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;padding:10px 20px;max-width:900px;margin:auto}
+.box{background:#1e293b;border-radius:15px;padding:25px;width:300px;border:2px solid #334155}
+.box.premium{border-color:#facc15;background:#292524}
+.box h3{margin-bottom:10px}
+.box ul{margin:15px 0 15px 20px;color:#cbd5e1;line-height:1.8;font-size:14px}
+.btn{display:block;text-align:center;padding:12px;border-radius:25px;font-weight:bold;text-decoration:none;margin-top:10px}
+.btn-free{background:#334155;color:white}
+.btn-pay{background:#facc15;color:black;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px;padding:20px;max-width:1100px;margin:auto}
+.card{background:#1e293b;padding:20px;border-radius:15px;cursor:pointer}
+.card.locked{opacity:.7;border:1px dashed #facc15}
+.card h3{margin-bottom:6px}
+.card p{color:#94a3b8;font-size:13px;line-height:1.5}
+.badge{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold}
+.free{background:#22c55e;color:black}.lock{background:#facc15;color:black}
+#lesson{display:none;max-width:800px;margin:20px auto;background:white;color:#1e293b;padding:25px;border-radius:15px}
+#lesson p,#lesson li{line-height:1.7;font-size:15px;margin-bottom:6px}
+.paybox{background:#fef3c7;padding:20px;border-radius:12px;margin-top:20px;color:#1e293b;text-align:center}
+.paybox input{padding:12px;width:80%;border-radius:10px;border:1px solid #ccc;margin:10px 0}
+.paybox button{background:#0f172a;color:white;padding:12px 20px;border:none;border-radius:20px;font-weight:bold}
+footer{text-align:center;padding:30px;color:#64748b;font-size:12px}
+footer a{color:#38bdf8}
 </style>
 </head>
 <body>
-<header><h1>🎓 COURS CAMPUS</h1><p>TOUTES LES FACULTÉS - LICENCE 1 - UNIVERSITÉ</p></header>
-<div class="hero"><h2>Choisis ta Faculté</h2><p>6 Facultés • Vrais cours d'université • 100% Gratuit</p></div>
+<header><h1>🎓 COURS CAMPUS</h1><p>UNIVERSITÉ - TOUTES LES FACULTÉS</p></header>
 
-<div class="grid" id="home">
-<div class="card" onclick="openLesson('droit')"><div class="icon">⚖️</div><h3>DROIT</h3><p>Droit Constitutionnel, Droit Civil, Introduction au Droit. Pour les futurs juristes.</p><span>Ouvrir le cours →</span></div>
-<div class="card" onclick="openLesson('eco')"><div class="icon">📊</div><h3>ÉCONOMIE & GESTION</h3><p>Microéconomie, Macroéconomie, Comptabilité, Marketing. Pour les futurs managers.</p><span>Ouvrir le cours →</span></div>
-<div class="card" onclick="openLesson('info')"><div class="icon">💻</div><h3>INFORMATIQUE</h3><p>Algorithmique, Programmation, Bases de Données, Réseaux. Pour les futurs développeurs.</p><span>Ouvrir le cours →</span></div>
-<div class="card" onclick="openLesson('lettres')"><div class="icon">📖</div><h3>LETTRES & SCIENCES HUMAINES</h3><p>Linguistique, Littérature, Histoire, Philosophie, Sociologie.</p><span>Ouvrir le cours →</span></div>
-<div class="card" onclick="openLesson('sciences')"><div class="icon">🔬</div><h3>SCIENCES</h3><p>Mathématiques, Physique, Chimie, Biologie. Licence Sciences.</p><span>Ouvrir le cours →</span></div>
-<div class="card" onclick="openLesson('medecine')"><div class="icon">🩺</div><h3>MÉDECINE & SANTÉ</h3><p>Anatomie, Biologie Cellulaire, Physiologie. Pour les futurs médecins.</p><span>Ouvrir le cours →</span></div>
+<div class="stats">
+<div class="stat"><b id="visits">0</b><span>👁️ Visites totales</span></div>
+<div class="stat"><b id="freeCount">0</b><span>🆓 Gratuits</span></div>
+<div class="stat"><b id="payCount">0</b><span>💰 Payants</span></div>
+<div class="stat"><b id="money">0 F</b><span>💵 Argent gagné</span></div>
 </div>
 
-<div id="lesson"><button class="back" onclick="goHome()">← Retour aux Facultés</button><div id="content"></div></div>
-<footer>COURS CAMPUS © 2026 - Fait par un étudiant, pour les étudiants.</footer>
+<div class="hero"><h2>Apprends à l'Université, sans stress !</h2><p>6 Facultés • Licence 1 • Cours complets</p></div>
+
+<div class="pricing">
+<div class="box"><h3>🆓 GRATUIT - 0F</h3><p style="color:#94a3b8;font-size:14px">Pour tester</p><ul><li>1 Leçon gratuite par faculté</li><li>Accès limité</li><li>Pas de quiz corrigé</li></ul><a class="btn btn-free" href="#cours">Commencer Gratuitement</a></div>
+<div class="box premium"><h3>💎 PREMIUM - 1000F / MOIS</h3><p style="color:#facc15;font-size:14px">⭐ LE PLUS CHOISI</p><ul><li>✅ TOUTES les leçons, TOUTES les facultés</li><li>✅ Tous les quiz + corrections</li><li>✅ Nouveaux cours chaque semaine</li><li>✅ Support WhatsApp</li></ul><a class="btn btn-pay" href="#pay">🔓 DÉBLOQUER POUR 1000F - FLOOZ</a></div>
+</div>
+
+<div id="cours" class="grid">
+<div class="card" onclick="openLesson('droit',true)"><h3>⚖️ DROIT</h3><p>Introduction au Droit - La règle de droit</p><span class="badge free">GRATUIT - Essaie</span></div>
+<div class="card locked" onclick="openLesson('eco',false)"><h3>📊 ÉCONOMIE</h3><p>Microéconomie - La Rareté</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+<div class="card locked" onclick="openLesson('info',false)"><h3>💻 INFORMATIQUE</h3><p>Algorithmique - C'est quoi un algorithme ?</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+<div class="card locked" onclick="openLesson('lettres',false)"><h3>📖 LETTRES</h3><p>Linguistique - Langage, Langue, Parole</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+<div class="card locked" onclick="openLesson('sciences',false)"><h3>🔬 SCIENCES</h3><p>Logique & Ensembles</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+<div class="card locked" onclick="openLesson('medecine',false)"><h3>🩺 MÉDECINE</h3><p>La Cellule</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+</div>
+
+<div id="lesson"><button onclick="goHome()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:15px">← Retour</button><div id="content"></div>
+<div id="pay" class="paybox">
+<h3>💰 PAYER 1000F PAR FLOOZ</h3>
+<p><b>Étape 1 :</b> Envoie <b>1000F</b> par Flooz au numéro :</p>
+<h2 style="font-size:28px;margin:10px 0">📱 TON NUMÉRO FLOOZ ICI</h2>
+<p style="font-size:13px">⚠️ REMPLACE CE NUMÉRO PAR TON VRAI NUMÉRO FLOOZ DANS LE CODE !</p>
+<p><b>Étape 2 :</b> Après paiement, clique sur WhatsApp et envoie ta capture :</p>
+<a href="https://wa.me/22890000000?text=Salut%20j'ai%20pay%C3%A9%201000F%20pour%20COURS%20CAMPUS%20Premium" target="_blank" style="display:inline-block;background:#22c55e;color:white;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin:10px">📲 Envoyer ma preuve sur WhatsApp</a>
+<p style="font-size:13px;margin-top:10px">Étape 3 : Entre le code que je t'envoie après vérification :</p>
+<input id="code" placeholder="Ex: CAMPUS1000"><br>
+<button onclick="unlock()">Débloquer Premium 🔓</button>
+<p id="msg" style="margin-top:10px;font-weight:bold"></p>
+</div>
+</div>
+
+<footer><p><a href="#" onclick="showAdmin();return false">👑 Espace Patron (Admin)</a></p><p id="admin" style="display:none;margin-top:10px;background:#1e293b;padding:15px;border-radius:10px;color:white"></p><p style="margin-top:15px">COURS CAMPUS © 2026 - 1000F / Mois par Flooz</p></footer>
 
 <script>
-const cours = {
-droit: `<h2>⚖️ DROIT - Leçon 1 : Introduction au Droit</h2><p><b>Objectif :</b> Comprendre ce qu'est le Droit.</p><h4>1. C'est quoi le Droit ?</h4><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Il dit ce qui est permis, interdit et obligatoire. Sans Droit, c'est l'anarchie.</p><h4>2. La règle de droit</h4><ul><li><b>Générale :</b> Elle s'applique à tout le monde, pas à une seule personne.</li><li><b>Obligatoire :</b> On doit la respecter, sinon sanction.</li><li><b>Sanctionnée par l'État :</b> C'est l'État qui punit.</li></ul><h4>3. Exemple concret au Togo</h4><p>Le Code de la route dit : tu dois t'arrêter au feu rouge. Si tu ne respectes pas, la police te donne une amende. C'est ça, une règle de droit.</p><div class="quiz"><b>📝 Quiz :</b> Quelle est la différence entre une règle de morale et une règle de droit ?<br><i>Réponse : La règle de droit est sanctionnée par l'État, la morale non.</i></div>`,
-eco: `<h2>📊 ÉCONOMIE - Leçon 1 : Microéconomie - La Rareté</h2><p><b>Objectif :</b> Comprendre pourquoi l'économie existe.</p><h4>1. Le problème économique</h4><p>Les besoins des humains sont illimités, mais les ressources sont limitées. C'est ça la <b>rareté</b>. Exemple : Tu as 5000 FCFA, tu veux un habit à 8000 FCFA et un livre à 3000 FCFA. Tu ne peux pas tout acheter, tu dois choisir.</p><h4>2. Le coût d'opportunité</h4><p>Quand tu choisis une chose, tu renonces à une autre. Si tu achètes le livre, le coût d'opportunité c'est l'habit que tu n'as pas acheté.</p><h4>3. Les 3 questions de l'économie</h4><ul><li>Quoi produire ?</li><li>Comment produire ?</li><li>Pour qui produire ?</li></ul><div class="quiz"><b>📝 Quiz :</b> Tu as 10000 FCFA. Tu hésites entre un téléphone et payer ton inscription. C'est quoi le coût d'opportunité si tu choisis le téléphone ?<br><i>Réponse : Ton inscription.</i></div>`,
-info: `<h2>💻 INFORMATIQUE - Leçon 1 : Algorithmique</h2><p><b>Objectif :</b> Comprendre ce qu'est un algorithme.</p><h4>1. C'est quoi un algorithme ?</h4><p>Un algorithme c'est une suite d'étapes claires pour résoudre un problème. Comme une recette de cuisine. Exemple : Pour faire du thé, tu suis des étapes : 1. Mettre l'eau, 2. Chauffer, 3. Mettre le thé, 4. Servir.</p><h4>2. Exemple : Calculer la moyenne</h4><ul><li>Étape 1 : Demander les 2 notes</li><li>Étape 2 : Additionner les notes</li><li>Étape 3 : Diviser par 2</li><li>Étape 4 : Afficher le résultat</li></ul><h4>3. Les 3 structures</h4><p><b>Séquence</b> (étape par étape), <b>Condition</b> (Si... Alors...), <b>Boucle</b> (Répéter tant que...)</p><div class="quiz"><b>📝 Quiz :</b> Écris l'algorithme pour vérifier si un étudiant a validé (moyenne >= 10).<br><i>Réponse : Si moyenne >= 10 Alors Afficher "Validé" Sinon Afficher "Ajourné".</i></div>`,
-lettres: `<h2>📖 LETTRES - Leçon 1 : Linguistique - Langage, Langue, Parole</h2><p><b>Objectif :</b> Faire la différence entre ces 3 notions de Saussure.</p><h4>1. Le Langage</h4><p>C'est la capacité que tous les humains ont de communiquer. Les animaux n'ont pas de langage comme nous.</p><h4>2. La Langue</h4><p>C'est un système précis : le Français, l'Anglais, l'Ewe, le Mina. C'est un code partagé par un groupe.</p><h4>3. La Parole</h4><p>C'est quand TOI tu parles, tu utilises la langue à ta façon. Exemple : Quand tu dis "Ça va poto ?", c'est ta parole.</p><div class="quiz"><b>📝 Quiz :</b> Le Mina est-il une langue ou un langage ?<br><i>Réponse : C'est une langue, car c'est un système précis parlé par un peuple.</i></div>`,
-sciences: `<h2>🔬 SCIENCES - Leçon 1 : Logique & Ensembles</h2><p><b>Objectif :</b> Maîtriser les bases des maths de Licence 1.</p><h4>1. C'est quoi un ensemble ?</h4><p>Un ensemble c'est un regroupement d'objets. Exemple : L'ensemble des étudiants de la Licence 1 Droit. On note A = {Ali, Awa, Kofi...}</p><h4>2. Les opérations</h4><ul><li><b>Union (U) :</b> Tout ce qui est dans A OU dans B.</li><li><b>Intersection (∩) :</b> Ce qui est dans A ET dans B.</li><li><b>Complémentaire :</b> Ce qui n'est PAS dans A.</li></ul><h4>3. Exemple</h4><p>A = {1,2,3}, B = {3,4,5}. Alors A U B = {1,2,3,4,5} et A ∩ B = {3}.</p><div class="quiz"><b>📝 Quiz :</b> A={1,2}, B={2,3}. C'est quoi A ∩ B ?<br><i>Réponse : {2}</i></div>`,
-medecine: `<h2>🩺 MÉDECINE - Leçon 1 : La Cellule</h2><p><b>Objectif :</b> Comprendre la base de la vie.</p><h4>1. C'est quoi une cellule ?</h4><p>La cellule est la plus petite unité de la vie. Ton corps a environ 37 000 milliards de cellules ! C'est comme des petites briques qui construisent ton corps.</p><h4>2. Les 3 parties principales</h4><ul><li><b>Membrane :</b> La peau de la cellule, elle protège.</li><li><b>Cytoplasme :</b> Le liquide à l'intérieur où tout se passe.</li><li><b>Noyau :</b> Le cerveau de la cellule, il contient l'ADN.</li></ul><h4>3. Exemple</h4><p>Les globules rouges sont des cellules qui transportent l'oxygène dans ton sang. Sans elles, tu ne peux pas respirer.</p><div class="quiz"><b>📝 Quiz :</b> Où se trouve l'ADN dans la cellule ?<br><i>Réponse : Dans le noyau.</i></div>`
+// COMPTEUR VISITES
+let v = parseInt(localStorage.getItem('cc_visits')||'0')+1;
+localStorage.setItem('cc_visits',v);
+let freeU = parseInt(localStorage.getItem('cc_free')||'0');
+if(!localStorage.getItem('cc_seen')){freeU++;localStorage.setItem('cc_free',freeU);localStorage.setItem('cc_seen','1')}
+let payU = parseInt(localStorage.getItem('cc_pay')||'0');
+document.getElementById('visits').innerText=v;
+document.getElementById('freeCount').innerText=freeU;
+document.getElementById('payCount').innerText=payU;
+document.getElementById('money').innerText=(payU*1000)+' F';
+let isPremium = localStorage.getItem('cc_premium')=='1';
+if(isPremium){document.querySelectorAll('.card').forEach(c=>{c.classList.remove('locked')})}
+
+const cours={
+droit:`<h2>⚖️ DROIT - Leçon 1 : Introduction au Droit</h2><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Il dit ce qui est permis, interdit, obligatoire.</p><p><b>La règle de droit :</b> Générale, Obligatoire, Sanctionnée par l'État.</p><p><b>Exemple Togo :</b> Feu rouge = tu t'arrêtes, sinon amende. C'est une règle de droit.</p><div style="background:#f0f9ff;padding:12px;border-radius:10px"><b>Quiz :</b> Différence morale / droit ? Réponse : Le droit est sanctionné par l'État.</div>`,
+eco:`<h2>📊 ÉCONOMIE - Microéconomie : La Rareté</h2><p>Besoins illimités, ressources limitées = Rareté. Tu as 5000F, tu veux habit 8000F + livre 3000F, tu dois choisir.</p><p><b>Coût d'opportunité :</b> Ce que tu abandonnes quand tu choisis. Si tu prends le livre, tu perds l'habit.</p>`,
+info:`<h2>💻 INFORMATIQUE - Algorithmique</h2><p>Un algorithme = suite d'étapes claires comme une recette. Ex: Moyenne = 1. Demander 2 notes 2. Additionner 3. Diviser par 2 4. Afficher.</p>`,
+lettres:`<h2>📖 LETTRES - Linguistique</h2><p><b>Langage :</b> Capacité humaine. <b>Langue :</b> Système précis (Français, Ewe, Mina). <b>Parole :</b> Quand TOI tu parles.</p>`,
+sciences:`<h2>🔬 SCIENCES - Logique & Ensembles</h2><p>Ensemble = regroupement. A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}.</p>`,
+medecine:`<h2>🩺 MÉDECINE - La Cellule</h2><p>La cellule = brique de la vie. 37 000 milliards dans ton corps. Membrane = peau, Cytoplasme = liquide, Noyau = cerveau avec ADN.</p>`
 };
-function openLesson(k){document.getElementById('home').style.display='none';document.getElementById('lesson').style.display='block';document.getElementById('content').innerHTML=cours[k];window.scrollTo(0,0)}
-function goHome(){document.getElementById('lesson').style.display='none';document.getElementById('home').style.display='grid'}
+function openLesson(k,isFree){
+if(!isFree && !isPremium){document.getElementById('content').innerHTML='<h2>🔒 Cours Premium</h2><p>Ce cours est réservé aux membres Premium. Paie 1000F par Flooz pour débloquer TOUT !</p>';}
+else{document.getElementById('content').innerHTML=cours[k];}
+document.querySelector('.grid').style.display='none';document.getElementById('lesson').style.display='block';window.scrollTo(0,0);
+document.getElementById('pay').style.display = (!isFree && !isPremium) ? 'block':'none';
+}
+function goHome(){document.getElementById('lesson').style.display='none';document.querySelector('.grid').style.display='grid'}
+function unlock(){
+let c=document.getElementById('code').value.trim().toUpperCase();
+if(c=='CAMPUS1000'){localStorage.setItem('cc_premium','1');payU++;localStorage.setItem('cc_pay',payU);document.getElementById('msg').innerText='✅ PREMIUM DÉBLOQUÉ ! Recharge la page, tout est ouvert !';}
+else{document.getElementById('msg').innerText='❌ Code faux. Paie d\'abord 1000F et demande ton code sur WhatsApp.'}
+}
+function showAdmin(){
+let pass=prompt('Mot de passe Patron ? (Pour l\'instant c\'est : admin123)');
+if(pass=='admin123'){document.getElementById('admin').style.display='block';document.getElementById('admin').innerHTML='👑 <b>TABLEAU PATRON</b><br>👁️ Visites : '+v+'<br>🆓 Gratuits : '+freeU+'<br>💰 Payants : '+payU+'<br>💵 Argent : '+(payU*1000)+' F<br><br>Code Premium à donner après paiement : <b>CAMPUS1000</b>';}
+else alert('Mauvais mot de passe');
+}
 </script>
 </body>
 </html>

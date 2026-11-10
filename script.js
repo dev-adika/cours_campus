@@ -1,8 +1,6 @@
 // COURS CAMPUS - V3 - By ADIKA - 30 JOURS PAR PERSONNE
 const STORAGE_KEY = 'campus_codes_v3';
 const UNLOCK_KEY = 'campus_unlocked_v3';
-
-// TON CODE PATRON QUI NE MEURT JAMAIS 👑
 const CODE_PATRON = 'RASTIZY228';
 
 let validCodes = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -27,8 +25,6 @@ function showFiliere(id){
 function checkCode(){
   const c = document.getElementById('codeInput').value.trim().toUpperCase();
   const msg = document.getElementById('msg');
-
-  // 1. C'EST TOI LE PATRON ?
   if(c === CODE_PATRON){
     localStorage.setItem(UNLOCK_KEY,'yes');
     unlocked = true;
@@ -37,27 +33,19 @@ function checkCode(){
     updateLocks();
     return;
   }
-
-  // 2. C'EST UN CODE CLIENT ?
   const trouve = validCodes.find(x => x.code === c);
-
   if(!trouve){
     msg.innerHTML = '❌ Code faux ! Paie 1000F Flooz pour avoir ton code.';
     return;
   }
-
-  // 3. ON VÉRIFIE LES 30 JOURS POUR LUI SEUL
   const maintenant = Date.now();
   const difference = maintenant - trouve.date;
   const trenteJours = 30 * 24 * 60 * 60 * 1000;
-
   if(difference > trenteJours){
     msg.innerHTML = '⏰ Ton code de 30 jours est fini ! Repaie 1000F pour un nouveau code.';
     return;
   }
-
   const joursRestants = Math.ceil((trenteJours - difference) / (24*60*60*1000));
-
   localStorage.setItem(UNLOCK_KEY,'yes');
   unlocked = true;
   msg.innerHTML = '✅ CODE BON ! Il te reste ' + joursRestants + ' jours ! Bienvenue PRO ❤️';
@@ -89,7 +77,6 @@ function loginAdmin(){
     renderCodes();
   } else alert('Mot de passe faux !');
 }
-
 function genCode(){
   const code = 'CAMPUS-' + Math.floor(1000+Math.random()*9000);
   lastCode = code;
@@ -101,30 +88,21 @@ function genCode(){
   document.getElementById('copyBtn').style.display='block';
   renderCodes();
 }
-
 function copyCode(){
   if(!lastCode) return;
   navigator.clipboard.writeText(lastCode).then(()=> alert('Code copié ! ✅ : ' + lastCode));
 }
-
 function renderCodes(){
   const trenteJours = 30 * 24 * 60 * 60 * 1000;
   const maintenant = Date.now();
-
   let html = '<div style="background:#ffaa00;color:#000;padding:10px;border-radius:10px;margin-bottom:10px;"><b>👑 TON CODE PATRON : RASTIZY228</b><br>Ne s\'expire jamais - Ne le donne à personne !</div>';
-
   html += validCodes.map(obj=>{
     const reste = Math.ceil((trenteJours - (maintenant - obj.date)) / (24*60*60*1000));
     const dateCree = new Date(obj.date).toLocaleDateString('fr-FR');
-    if(reste <= 0){
-      return '• ' + obj.code + ' - ⏰ EXPIRÉ - créé le ' + dateCree;
-    } else {
-      return '• ' + obj.code + ' - créé le ' + dateCree + ' - reste ' + reste + ' jours';
-    }
+    if(reste <= 0){ return '• ' + obj.code + ' - ⏰ EXPIRÉ - créé le ' + dateCree; }
+    else { return '• ' + obj.code + ' - créé le ' + dateCree + ' - reste ' + reste + ' jours'; }
   }).join('<br>');
-
   document.getElementById('listCodes').innerHTML = html;
   document.getElementById('countCodes').textContent = '(' + validCodes.length + ')';
 }
-
 updateLocks();

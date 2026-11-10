@@ -1,208 +1,262 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COURS CAMPUS - IA + 1000F Premium</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COURS CAMPUS - By ADIKA</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:white}a
-header{background:#1e293b;padding:20px;text-align:center}
-header h1{color:#38bdf8;font-size:28px}
-.hero{text-align:center;padding:30px 20px}.hero h2{font-size:28px}.hero p{color:#94a3b8;margin-top:8px}
-.pricing{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;padding:10px 20px;max-width:900px;margin:auto}
-.box{background:#1e293b;border-radius:15px;padding:25px;width:300px;border:2px solid #334155}
-.box.premium{border-color:#facc15;background:#292524}
-.box ul{margin:15px 0 15px 20px;color:#cbd5e1;line-height:1.8;font-size:14px}
-.btn{display:block;text-align:center;padding:12px;border-radius:25px;font-weight:bold;text-decoration:none;margin-top:10px}
-.btn-pay{background:#facc15;color:black}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px;padding:20px;max-width:1100px;margin:auto}
-.card{background:#1e293b;padding:20px;border-radius:15px;cursor:pointer;border:1px dashed #facc15}
-.card h3{margin-bottom:6px}.card p{color:#94a3b8;font-size:13px;line-height:1.5}
-.badge{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold;background:#facc15;color:black}
-.fac{max-width:900px;margin:20px auto;background:#1e293b;padding:20px;border-radius:15px;display:none}
-.lessonBtn{display:block;width:100%;text-align:left;background:#292524;color:#facc15;border:1px dashed #facc15;padding:13px;margin:8px 0;border-radius:10px;font-size:14px;cursor:pointer}
-.lessonBtn.unlocked{background:#334155;color:white;border:none}
-#lesson{display:none;max-width:850px;margin:20px auto;background:white;color:#1e293b;padding:28px;border-radius:15px}
-#lesson h2{margin-bottom:12px}#lesson h4{margin:18px 0 8px;color:#0284c7}#lesson p,#lesson li{line-height:1.75;font-size:15px;margin-bottom:8px}#lesson ul{margin-left:20px}
-.paybox{background:#fef3c7;padding:20px;border-radius:12px;margin-top:20px;color:#1e293b;text-align:center}
-.paybox input{padding:12px;width:85%;border-radius:10px;border:1px solid #ccc;margin:10px 0}
-.paybox button{background:#0f172a;color:white;padding:12px 20px;border:none;border-radius:20px;font-weight:bold}
-/* IA CAMPUS */
-#iaBtn{position:fixed;bottom:20px;right:20px;background:#38bdf8;color:#0f172a;border:none;width:65px;height:65px;border-radius:50%;font-size:30px;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,.4);z-index:999}
-#iaBox{display:none;position:fixed;bottom:95px;right:15px;width:330px;max-width:92vw;height:480px;max-height:75vh;background:white;color:#1e293b;border-radius:15px;overflow:hidden;flex-direction:column;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:999}
-#iaHeader{background:#0f172a;color:white;padding:15px;display:flex;justify-content:space-between;align-items:center}
-#iaHeader b{font-size:15px}
-#iaHeader span{font-size:11px;color:#38bdf8}
-#iaClose{background:none;border:none;color:white;font-size:20px;cursor:pointer}
-#iaMessages{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;background:#f8fafc}
-.msg{padding:10px 12px;border-radius:12px;font-size:14px;line-height:1.5;max-width:85%}
-.msg.ia{background:#e0f2fe;align-self:flex-start}
-.msg.user{background:#0f172a;color:white;align-self:flex-end}
-.msg small{display:block;margin-top:5px;font-size:11px;color:#64748b}
-#iaInputBox{display:flex;padding:10px;gap:8px;border-top:1px solid #e2e8f0;background:white}
-#iaInput{flex:1;padding:11px;border:1px solid #cbd5e1;border-radius:20px;outline:none}
-#iaSend{background:#38bdf8;border:none;padding:11px 16px;border-radius:20px;font-weight:bold;cursor:pointer}
-.quick{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:white;border-top:1px solid #eee}
-.quick button{background:#f1f5f9;border:1px solid #e2e8f0;padding:6px 10px;border-radius:20px;font-size:12px;cursor:pointer}
-footer{text-align:center;padding:30px;color:#64748b;font-size:12px;padding-bottom:80px}
+/* COURS CAMPUS - By ADIKA - TOUT EN BLEU 💙 */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+body { background:#050a1a; color:#fff; padding:15px; padding-bottom:60px; }
+a { text-decoration:none; }
+.header { text-align:center; padding:25px 10px; background:linear-gradient(135deg,#00aaff,#0066ff,#0044cc); color:#fff; border-radius:18px; margin-bottom:15px; box-shadow:0 5px 20px rgba(0,102,255,0.4); }
+.header h1 { font-size:28px; letter-spacing:1px; }
+.header p { font-weight:600; margin-top:5px; }
+.badge { display:inline-block; background:#fff; color:#0066ff; padding:6px 14px; border-radius:20px; font-size:12px; margin-top:10px; font-weight:800; }
+.pay-box { background:#0d1a3a; border:2px solid #00aaff; padding:18px; border-radius:16px; text-align:center; margin-bottom:15px; }
+.pay-box b { color:#00aaff; font-size:17px; }
+.pay-box p { margin:6px 0 12px; color:#ccc; }
+.pay-box small { display:block; margin-top:12px; color:#aaa; line-height:1.6; font-size:13px; }
+.btn { display:block; width:100%; padding:14px; border:none; border-radius:12px; font-weight:800; font-size:15px; cursor:pointer; text-align:center; }
+.btn-whatsapp { background:#25D366; color:#fff; }
+.btn-yellow { background:#0066ff; color:#fff; margin-top:10px; box-shadow:0 4px 15px rgba(0,102,255,0.4); }
+.btn-gen { background:#00d26a; color:#fff; margin:15px 0; }
+.btn-copy { background:#fff; color:#0066ff; margin-top:10px; font-weight:800; }
+.btn-back { background:#333; color:#fff; padding:12px 20px; border:none; border-radius:10px; margin-top:20px; cursor:pointer; width:100%; font-weight:700; }
+.code-box { background:#0d1a3a; padding:18px; border-radius:16px; margin-bottom:20px; text-align:center; border:1px solid #1a3a7a; }
+.code-box b { color:#fff; }
+.code-box input, .admin-page input { width:100%; padding:14px; border-radius:10px; border:2px solid #1a3a7a; background:#050a1a; color:#fff; margin:12px 0 0; font-size:16px; text-align:center; text-transform:uppercase; outline:none; }
+.code-box input:focus { border-color:#00aaff; }
+#msg { margin-top:12px; font-weight:700; min-height:20px; }
+#status { color:#00aaff; }
+.title-filiere { margin:20px 0 12px; font-size:18px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.card { background:#0d1a3a; padding:18px 10px; border-radius:16px; text-align:center; cursor:pointer; border:1px solid #1a3a7a; }
+.card:active { transform:scale(0.96); background:#132a5a; }
+.card span { font-size:32px; }
+.card h3 { font-size:14px; margin:8px 0 4px; color:#00aaff; }
+.card p { font-size:12px; color:#aaa; }
+.cours { display:none; background:#0d1a3a; padding:18px; border-radius:16px; margin-bottom:20px; border:1px solid #1a3a7a; }
+.cours.show { display:block; }
+.cours h3 { color:#00aaff; margin-bottom:12px; }
+.cours-item { display:flex; justify-content:space-between; align-items:center; background:#0a1230; padding:13px; border-radius:10px; margin-bottom:8px; font-size:14px; }
+.lock { font-size:18px; }
+.small { text-align:center; color:#777; font-size:12px; margin-top:30px; }
+.admin-link { text-align:center; margin-top:10px; }
+.admin-link a { color:#444; font-size:12px; }
+.admin-page { display:none; max-width:500px; margin:0 auto; padding:20px; }
+.admin-page.show { display:block; }
+.admin-page h2 { color:#00aaff; text-align:center; margin-bottom:5px; }
+.admin-sub { text-align:center; color:#aaa; font-size:13px; margin-bottom:15px; }
+#adminZone { display:none; margin-top:20px; background:#0d1a3a; padding:18px; border-radius:16px; border:1px solid #1a3a7a; }
+#adminZone h3 { margin-bottom:10px; font-size:16px; }
+.code-gen { display:none; background:#00aaff; color:#fff; font-weight:900; font-size:22px; text-align:center; padding:15px; border-radius:12px; letter-spacing:1px; }
+#listCodes { background:#050a1a; padding:15px; border-radius:12px; font-size:13px; line-height:2; word-break:break-all; color:#ddd; }
 </style>
 </head>
 <body>
-<header><h1>🎓 COURS CAMPUS</h1><p>UNIVERSITÉ - 30 COURS + IA QUI RÉPOND - LICENCE 1</p></header>
-<div class="hero"><h2>30 Cours + Une IA Qui Répond à Tes Questions !</h2><p>6 Facultés • Tout est Premium 1000F • Pose ta question à l'IA, elle répond direct !</p></div>
 
-<div class="pricing">
-<div class="box premium" style="width:100%;max-width:520px;text-align:center"><h3>💎 PREMIUM - 1000F / MOIS - TOUT INCLUS</h3><ul style="text-align:left"><li>✅ 30 LEÇONS DÉVELOPPÉES</li><li>✅ 6 Facultés : Droit, Éco, Info, Lettres, Sciences, Médecine</li><li>✅ 🤖 IA CAMPUS qui répond à tes questions 24h/24</li><li>✅ Définitions + Exemples du Togo + Quiz</li></ul><a class="btn btn-pay" href="#pay">🔓 DÉBLOQUER TOUT POUR 1000F - FLOOZ</a></div>
+<main id="main">
+  <header class="header">
+    <h1>🎓 COURS CAMPUS</h1>
+    <p>By ADIKA • Dev Web Mobile IA</p>
+    <span class="badge">100% Mobile • Lomé, Togo</span>
+  </header>
+
+  <section class="pay-box">
+    <b>🔥 OFFRE CAMPUS : 1.000F / MOIS</b>
+    <p>Tous les cours PRO débloqués !</p>
+    <a class="btn btn-whatsapp" href="https://wa.me/22897528950?text=Bonjour%20ADIKA%2C%20je%20veux%20mon%20CODE%20PRO%20CAMPUS">📲 PAYER 1.000F PAR FLOOZ → WhatsApp</a>
+    <small>1. Paie 1.000F Flooz au 97 52 89 50<br>2. Envoie capture WhatsApp<br>3. Reçois ton CODE UNIQUE - Valable 30 jours</small>
+  </section>
+
+  <section class="code-box">
+    <b>🔓 TU AS DÉJÀ TON CODE ?</b>
+    <input id="codeInput" placeholder="Ex: CAMPUS-5829 ou RASTIZY228" autocomplete="off">
+    <button class="btn btn-yellow" onclick="checkCode()">DÉBLOQUER MES COURS PRO ✅</button>
+    <p id="msg"></p>
+    <p>Statut : <b id="status">🔒 MODE GRATUIT</b></p>
+  </section>
+
+  <h3 class="title-filiere">👇 Choisis ta Filière :</h3>
+  <div class="grid">
+    <div class="card" onclick="showFiliere('droit')"><span>⚖️</span><h3>DROIT</h3><p>FDD</p></div>
+    <div class="card" onclick="showFiliere('eco')"><span>💰</span><h3>ÉCO / GESTION</h3><p>FASEG</p></div>
+    <div class="card" onclick="showFiliere('lettres')"><span>📖</span><h3>LETTRES</h3><p>FLESH</p></div>
+    <div class="card" onclick="showFiliere('sciences')"><span>🔬</span><h3>SCIENCES</h3><p>FDS</p></div>
+    <div class="card" onclick="showFiliere('medecine')"><span>🩺</span><h3>MÉDECINE</h3><p>FSS</p></div>
+    <div class="card" onclick="showFiliere('info')"><span>💻</span><h3>INFO / ANGLAIS</h3><p>Tous</p></div>
+  </div>
+
+  <div id="droit" class="cours"><h3>⚖️ DROIT - FDD</h3>
+    <div class="cours-item"><span>✅ Droit Civil - Gratuit</span><span>▶️</span></div>
+    <div class="cours-item"><span>🔒 Droit Pénal - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Droit Constitutionnel - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Droit des Affaires - PRO</span><span class="lock">🔒</span></div>
+  </div>
+
+  <div id="eco" class="cours"><h3>💰 ÉCO / GESTION - FASEG</h3>
+    <div class="cours-item"><span>✅ Économie Générale - Gratuit</span><span>▶️</span></div>
+    <div class="cours-item"><span>🔒 Comptabilité - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Gestion - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Statistiques - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Marketing - PRO</span><span class="lock">🔒</span></div>
+  </div>
+
+  <div id="lettres" class="cours"><h3>📖 LETTRES - FLESH</h3>
+    <div class="cours-item"><span>✅ Français - Gratuit</span><span>▶️</span></div>
+    <div class="cours-item"><span>🔒 Anglais - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Histoire-Géo - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Philosophie - PRO</span><span class="lock">🔒</span></div>
+  </div>
+
+  <div id="sciences" class="cours"><h3>🔬 SCIENCES - FDS</h3>
+    <div class="cours-item"><span>✅ Maths - Gratuit</span><span>▶️</span></div>
+    <div class="cours-item"><span>🔒 Physique-Chimie - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Biologie / SVT - PRO</span><span class="lock">🔒</span></div>
+  </div>
+
+  <div id="medecine" class="cours"><h3>🩺 MÉDECINE - FSS</h3>
+    <div class="cours-item"><span>✅ Biologie Médicale - Gratuit</span><span>▶️</span></div>
+    <div class="cours-item"><span>🔒 Anatomie - PRO</span><span class="lock">🔒</span></div>
+  </div>
+
+  <div id="info" class="cours"><h3>💻 INFO / ANGLAIS</h3>
+    <div class="cours-item"><span>✅ Word / Excel - Gratuit</span><span>▶️</span></div>
+    <div class="cours-item"><span>🔒 Anglais Campus - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Méthodologie Mémoire - PRO</span><span class="lock">🔒</span></div>
+  </div>
+
+  <p class="small">COURS CAMPUS © ADIKA - Lomé, Togo • Flooz : 97 52 89 50</p>
+  <div class="admin-link"><a href="#" onclick="showAdmin()">Admin - Patron seulement</a></div>
+</main>
+
+<div id="admin" class="admin-page">
+  <h2>🔐 ADMIN - PATRON ADIKA</h2>
+  <p class="admin-sub">Mot de passe : ADIKA123</p>
+  <input id="adminPass" type="password" placeholder="Mot de passe">
+  <button class="btn btn-yellow" onclick="loginAdmin()">ENTRER</button>
+  <div id="adminZone">
+    <h3>🎟️ CRÉER UN NOUVEAU CODE</h3>
+    <button class="btn btn-gen" onclick="genCode()">+ CRÉER UN CODE</button>
+    <div id="newCode" class="code-gen"></div>
+    <button id="copyBtn" class="btn btn-copy" onclick="copyCode()" style="display:none">📋 COPIER LE CODE</button>
+    <p class="admin-sub">Copie et envoie sur WhatsApp après paiement Flooz ! Valable 30 jours.</p>
+    <h3>📋 Codes déjà créés : <span id="countCodes"></span></h3>
+    <div id="listCodes"></div>
+    <button onclick="backMain()" class="btn-back">← Retour au site</button>
+  </div>
 </div>
-
-<div id="cours" class="grid">
-<div class="card" onclick="showFac('droit')"><h3>⚖️ DROIT</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
-<div class="card" onclick="showFac('eco')"><h3>📊 ÉCONOMIE</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
-<div class="card" onclick="showFac('info')"><h3>💻 INFORMATIQUE</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
-<div class="card" onclick="showFac('lettres')"><h3>📖 LETTRES</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
-<div class="card" onclick="showFac('sciences')"><h3>🔬 SCIENCES</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
-<div class="card" onclick="showFac('medecine')"><h3>🩺 MÉDECINE</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
-</div>
-
-<div id="facBox" class="fac"><button onclick="goHome()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:10px">← Retour</button><h3 id="facTitle"></h3><div id="facLessons"></div>
-<div id="payFac" class="paybox">
-<h3>💰 PAYER 1000F PAR FLOOZ</h3>
-<p><b>Étape 1 :</b> Envoie <b>1000F</b> par Flooz au :</p>
-<h2 style="font-size:32px;margin:10px 0">📱 97 52 89 50</h2>
-<p><b>Étape 2 :</b> Envoie ta capture sur WhatsApp :</p>
-<a href="https://wa.me/22897528950?text=Salut%20j'ai%20pay%C3%A9%201000F%20pour%20COURS%20CAMPUS%20Premium" target="_blank" style="display:inline-block;background:#22c55e;color:white;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin:10px">📲 Envoyer ma preuve sur WhatsApp - 97 52 89 50</a>
-<p style="font-size:13px">Étape 3 : Entre le code UNIQUE que le patron t'envoie :</p>
-<input id="code" placeholder="Entre ton code ici"><br>
-<button onclick="unlock()">Débloquer Premium 🔓</button>
-<p id="msg" style="margin-top:10px;font-weight:bold"></p>
-</div>
-</div>
-
-<div id="lesson"><button onclick="backToFac()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:15px">← Retour aux leçons</button><div id="content"></div></div>
-
-<!-- BOUTON IA -->
-<button id="iaBtn" onclick="toggleIA()">🤖</button>
-<div id="iaBox">
-<div id="iaHeader"><div><b>🤖 IA CAMPUS</b><br><span>● En ligne - Répond instantanément</span></div><button id="iaClose" onclick="toggleIA()">×</button></div>
-<div id="iaMessages"><div class="msg ia">Salut poto ! 👋 Moi c'est <b>IA CAMPUS</b>. Pose-moi une question sur Droit, Éco, Info, Lettres, Sciences ou Médecine, je te réponds avec tes cours !<br><small>Ex : "C'est quoi le Droit ?"</small></div></div>
-<div class="quick"><button onclick="askQuick('C est quoi le droit ?')">⚖️ Droit ?</button><button onclick="askQuick('C est quoi la rareté ?')">📊 Rareté ?</button><button onclick="askQuick('C est quoi un algorithme ?')">💻 Algorithme ?</button><button onclick="askQuick('C est quoi une cellule ?')">🩺 Cellule ?</button><button onclick="askQuick('Comment payer 1000F ?')">💰 Payer ?</button></div>
-<div id="iaInputBox"><input id="iaInput" placeholder="Pose ta question ici..." onkeypress="if(event.key==='Enter') sendIA()"><button id="iaSend" onclick="sendIA()">Envoyer</button></div>
-</div>
-
-<footer>COURS CAMPUS © 2026 - 1000F / Mois par Flooz au 97 52 89 50 - WhatsApp 97 52 89 50<br>🤖 IA CAMPUS - Pose tes questions, elle répond !</footer>
 
 <script>
-let mesCodes = ["TOGO-7841-KOFI","ANEHO-99-ZAZA","CAMPUS-XYZ-2026","KPALIME-55-LOVE","LOME-2026-8811","AFRIQUE-77-BOSS","ETUDIANT-31-OK","UNIVERSITE-12-PLUS","MOOV-9752-28950","FLOOZ-1000-OK"];
-let used = JSON.parse(localStorage.getItem('cc_used')||'[]');
-let isPremium = localStorage.getItem('cc_premium')=='1';
-let currentFac = '';
-let data = {
-droit: {title:"⚖️ DROIT - 5 Leçons", lessons:[
-["Leçon 1 : Introduction au Droit","<h4>1. C'est quoi le Droit ?</h4><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Sans Droit, c'est l'anarchie. Le Droit dit ce qui est permis, interdit, obligatoire.</p><h4>2. Règle de droit : 3 caractères</h4><ul><li><b>Générale :</b> Pour tout le monde.</li><li><b>Obligatoire :</b> On doit respecter.</li><li><b>Sanctionnée par l'État :</b> Amende, prison.</li></ul><h4>3. Exemple Togo</h4><p>Moto à Aného, feu rouge, tu t'arrêtes. Si tu passes, amende 5000F.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Droit = Générale + Obligatoire + Sanctionnée par l'État.</div>"],
-["Leçon 2 : Droit Constitutionnel","<h4>1. Constitution</h4><p>Loi suprême du pays. Toutes les autres lois doivent la respecter.</p><h4>2. 3 pouvoirs</h4><ul><li><b>Exécutif :</b> Président + Gouvernement, appliquent lois.</li><li><b>Législatif :</b> Assemblée, vote lois.</li><li><b>Judiciaire :</b> Juges, punissent.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Constitution > Lois > Règlements.</div>"],
-["Leçon 3 : Droit Civil","<h4>1. C'est quoi ?</h4><p>Vie de tous les jours : naissance, mariage, héritage, contrats.</p><h4>2. Majeur</h4><p>À 18 ans, majeur : voter, signer contrat, se marier.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Majeur = 18 ans.</div>"],
-["Leçon 4 : Droit Pénal","<h4>1. 3 niveaux</h4><ul><li><b>Contravention :</b> Petite faute, amende.</li><li><b>Délit :</b> Vol, bagarre, prison.</li><li><b>Crime :</b> Meurtre, viol, longue prison.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Contravention < Délit < Crime.</div>"],
-["Leçon 5 : Sources du Droit","<h4>1. 4 sources</h4><ul><li>Loi, Coutume, Jurisprudence, Doctrine.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Loi = source principale.</div>"]
-]},
-eco: {title:"📊 ÉCONOMIE - 5 Leçons", lessons:[
-["Leçon 1 : La Rareté","<h4>1. Problème</h4><p>Besoins illimités, ressources limitées = rareté.</p><h4>2. Coût d'opportunité</h4><p>Tu as 10000F, inscription ou téléphone. Si tu choisis téléphone, tu abandonnes inscription.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Rareté = Besoins illimités + Ressources limitées.</div>"],
-["Leçon 2 : Offre et Demande","<h4>1. Demande</h4><p>Prix monte = achètent moins. Prix baisse = achètent plus.</p><h4>2. Offre</h4><p>Prix monte = vendeurs vendent plus.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Prix ↑ = Demande ↓, Offre ↑.</div>"],
-["Leçon 3 : Le PIB","<p>PIB = Richesse totale produite dans un pays en 1 an. Si PIB Togo monte, pays plus riche.</p>"],
-["Leçon 4 : L'Inflation","<p>Inflation = Prix montent. Hier 1000F = 2 pains, aujourd'hui 1000F = 1 pain. Argent perd valeur.</p>"],
-["Leçon 5 : Comptabilité","<p><b>Bénéfice = Recettes - Dépenses</b>. Vends 50000F, dépenses 35000F, bénéfice 15000F.</p>"]
-]},
-info: {title:"💻 INFORMATIQUE - 5 Leçons", lessons:[
-["Leçon 1 : Algorithmique","<h4>1. C'est quoi ?</h4><p>Suite d'étapes claires comme une recette. Ex : Moyenne = Demander 2 notes, Additionner, Diviser par 2, Afficher.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Algorithme = Étapes + Ordre précis.</div>"],
-["Leçon 2 : Variables","<p>Variable = boîte qui garde une valeur. age = 20, nom = 'Kofi'.</p>"],
-["Leçon 3 : Conditions","<p>Si moyenne >= 10 Alors 'Validé' Sinon 'Ajourné'.</p>"],
-["Leçon 4 : Boucles","<p>Boucle = Répéter. Pour i de 1 à 5 : Afficher 'Bonjour' = 5 fois Bonjour.</p>"],
-["Leçon 5 : Bases de Données","<p>Grand tableau organisé. SQL : SELECT * FROM étudiants WHERE filière = 'Droit'.</p>"]
-]},
-lettres: {title:"📖 LETTRES - 5 Leçons", lessons:[
-["Leçon 1 : Linguistique","<p><b>Langage</b> = Capacité humaine. <b>Langue</b> = Système (Français, Ewe, Mina). <b>Parole</b> = Quand TOI tu parles. C'est Saussure.</p>"],
-["Leçon 2 : Littérature Africaine","<p>Achebe, Senghor, Kofi Awoonor. Raconter l'Afrique par les Africains.</p>"],
-["Leçon 3 : Dissertation","<p>Intro (Question + Plan) → Développement (Idée + Exemple) → Conclusion (Réponse).</p>"],
-["Leçon 4 : Sociologie","<p>Étudier la société. Famille, École, Religion influencent tes choix.</p>"],
-["Leçon 5 : Philosophie","<p>Socrate : 'Connais-toi toi-même'. Vérité = prouvé, Opinion = 'Je crois...'.</p>"]
-]},
-sciences: {title:"🔬 SCIENCES - 5 Leçons", lessons:[
-["Leçon 1 : Ensembles","<p>A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}. U = OU, ∩ = ET.</p>"],
-["Leçon 2 : Fonctions","<p>f(x)=2x+1, si x=3, f=7. Fonction = Entrée x → Sortie f(x).</p>"],
-["Leçon 3 : Limites","<p>Limite = vers quoi tend la fonction quand x devient très grand.</p>"],
-["Leçon 4 : Force","<p><b>F = m x a</b>. Plus masse grande, plus force nécessaire.</p>"],
-["Leçon 5 : Atomes","<p>Atome = Noyau + Électrons. H2O = 2 Hydrogène + 1 Oxygène = Eau.</p>"]
-]},
-medecine: {title:"🩺 MÉDECINE - 5 Leçons", lessons:[
-["Leçon 1 : La Cellule","<p>Cellule = brique de la vie. Membrane + Cytoplasme + Noyau (ADN). 37 000 milliards dans ton corps.</p>"],
-["Leçon 2 : Le Sang","<p>Rouges = Oxygène, Blancs = Défense, Plaquettes = Coagulation.</p>"],
-["Leçon 3 : Le Cœur","<p>Cœur = Pompe, 100 000 battements / jour.</p>"],
-["Leçon 4 : Les Os","<p>206 os. Protection + Mouvement + Fabrication du sang.</p>"],
-["Leçon 5 : Microbes","<p>Bactéries, Virus, Champignons. Se laver les mains = meilleure protection.</p>"]
-]}
-};
-function showFac(f){
-currentFac=f;document.querySelector('.grid').style.display='none';document.getElementById('facBox').style.display='block';
-document.getElementById('facTitle').innerText=data[f].title;
-let html='';
-data[f].lessons.forEach((l,i)=>{
-let locked = !isPremium;
-html+=`<button class="lessonBtn ${locked?'':'unlocked'}" onclick="openLesson('${f}',${i})">${locked?'🔒 ':''}${l[0]} ${locked?'- PREMIUM 1000F':''}</button>`;
-});
-document.getElementById('facLessons').innerHTML=html;
-document.getElementById('payFac').style.display = isPremium ? 'none':'block';
-}
-function openLesson(f,i){
-if(!isPremium){
-document.getElementById('facBox').style.display='none';document.getElementById('lesson').style.display='block';
-document.getElementById('content').innerHTML='<h2>🔒 Cours Premium - BLOQUÉ</h2><p>Tout est bloqué, même Droit ! Paie 1000F par Flooz au <b>97 52 89 50</b> pour tout débloquer !</p><div style="background:#fef3c7;padding:15px;border-radius:10px;text-align:center">Envoie 1000F Flooz au <b>97 52 89 50</b><br>Envoie capture sur WhatsApp <b>97 52 89 50</b><br>Puis entre ton code ci-dessous</div><div style="text-align:center;margin-top:15px"><input id="code2" placeholder="Entre ton code" style="padding:12px;width:80%;border-radius:10px;border:1px solid #ccc"><br><br><button onclick="unlock2()" style="background:#0f172a;color:white;padding:12px 20px;border:none;border-radius:20px;font-weight:bold">Débloquer 🔓</button><p id="msg2" style="margin-top:10px;font-weight:bold"></p></div>';
-window.scrollTo(0,0);return;
-}
-document.getElementById('facBox').style.display='none';document.getElementById('lesson').style.display='block';
-document.getElementById('content').innerHTML='<h2>'+data[f].lessons[i][0]+'</h2>'+data[f].lessons[i][1];
-window.scrollTo(0,0);
-}
-function goHome(){document.getElementById('facBox').style.display='none';document.querySelector('.grid').style.display='grid'}
-function backToFac(){document.getElementById('lesson').style.display='none';showFac(currentFac)}
-function unlock(){checkCode(document.getElementById('code').value.trim().toUpperCase(),'msg')}
-function unlock2(){checkCode(document.getElementById('code2').value.trim().toUpperCase(),'msg2')}
-function checkCode(c,msgId){
-if(mesCodes.includes(c) && !used.includes(c)){used.push(c);localStorage.setItem('cc_used',JSON.stringify(used));localStorage.setItem('cc_premium','1');document.getElementById(msgId).innerText='✅ PREMIUM DÉBLOQUÉ ! Recharge la page !';}
-else if(used.includes(c)){document.getElementById(msgId).innerText='❌ Ce code a déjà été utilisé !';}
-else{document.getElementById(msgId).innerText='❌ Code faux. Paie 1000F au 97 52 89 50 et demande ton code UNIQUE sur WhatsApp.';}
+// COURS CAMPUS - V3 - By ADIKA - 30 JOURS PAR PERSONNE - TOUT EN BLEU
+const STORAGE_KEY = 'campus_codes_v3';
+const UNLOCK_KEY = 'campus_unlocked_v3';
+const CODE_PATRON = 'RASTIZY228';
+
+let validCodes = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+let unlocked = localStorage.getItem(UNLOCK_KEY) === 'yes';
+let lastCode = '';
+
+if(validCodes.length === 0){
+  validCodes = [
+    { code: 'CAMPUS-1001', date: Date.now() },
+    { code: 'CAMPUS-1002', date: Date.now() }
+  ];
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(validCodes));
 }
 
-// ============ IA CAMPUS ============
-function toggleIA(){
-let b=document.getElementById('iaBox');
-b.style.display = b.style.display==='flex' ? 'none':'flex';
+function showFiliere(id){
+  document.querySelectorAll('.cours').forEach(e=>e.classList.remove('show'));
+  document.getElementById(id).classList.add('show');
+  window.scrollTo({top:600,behavior:'smooth'});
+  updateLocks();
 }
-function askQuick(q){document.getElementById('iaInput').value=q;sendIA();}
-function sendIA(){
-let input=document.getElementById('iaInput');
-let q=input.value.trim();
-if(!q) return;
-addMsg(q,'user');
-input.value='';
-setTimeout(()=>{addMsg(getAIAnswer(q),'ia')},600);
+
+function checkCode(){
+  const c = document.getElementById('codeInput').value.trim().toUpperCase();
+  const msg = document.getElementById('msg');
+  if(c === CODE_PATRON){
+    localStorage.setItem(UNLOCK_KEY,'yes');
+    unlocked = true;
+    msg.innerHTML = '👑 BIENVENUE PATRON RASTIZY228 ! Accès à vie débloqué ! ❤️';
+    document.getElementById('status').innerHTML = '👑 MODE PATRON - À VIE';
+    updateLocks();
+    return;
+  }
+  const trouve = validCodes.find(x => x.code === c);
+  if(!trouve){
+    msg.innerHTML = '❌ Code faux ! Paie 1000F Flooz pour avoir ton code.';
+    return;
+  }
+  const maintenant = Date.now();
+  const difference = maintenant - trouve.date;
+  const trenteJours = 30 * 24 * 60 * 60 * 1000;
+  if(difference > trenteJours){
+    msg.innerHTML = '⏰ Ton code de 30 jours est fini ! Repaie 1000F pour un nouveau code.';
+    return;
+  }
+  const joursRestants = Math.ceil((trenteJours - difference) / (24*60*60*1000));
+  localStorage.setItem(UNLOCK_KEY,'yes');
+  unlocked = true;
+  msg.innerHTML = '✅ CODE BON ! Il te reste ' + joursRestants + ' jours ! Bienvenue PRO ❤️';
+  document.getElementById('status').innerHTML = '✅ MODE PRO - Reste ' + joursRestants + ' jours';
+  updateLocks();
 }
-function addMsg(text,who){
-let box=document.getElementById('iaMessages');
-let d=document.createElement('div');d.className='msg '+who;d.innerHTML=text;
-box.appendChild(d);box.scrollTop=box.scrollHeight;
+
+function updateLocks(){
+  if(!unlocked) return;
+  document.querySelectorAll('.lock').forEach(e=>e.innerHTML='✅');
+  document.querySelectorAll('.cours-item').forEach(e=>{
+    if(e.innerHTML.includes('PRO') && !e.innerHTML.includes('DÉBLOQUÉ')){
+      e.innerHTML = e.innerHTML.replace('🔒','✅').replace('PRO','PRO DÉBLOQUÉ');
+    }
+  });
 }
-function getAIAnswer(q){
-q=q.toLowerCase();
-if(q.includes('payer')||q.includes('paiement')||q.includes('1000')||q.includes('flooz')||q.includes('premium')||q.includes('prix')||q.includes('cout')||q.includes('abonner')) return "💰 Pour débloquer TOUT :<br><br><b>1.</b> Envoie <b>1000F</b> par Flooz au <b>97 52 89 50</b><br><b>2.</b> Envoie ta capture sur WhatsApp au <b>97 52 89 50</b><br><b>3.</b> Le patron t'envoie ton code UNIQUE, tu le mets et tout s'ouvre ! 30 leçons !";
-if(q.includes('droit')||q.includes('regle')||q.includes('constitution')||q.includes('penal')||q.includes('civil')) return "⚖️ <b>DROIT - L'essentiel :</b><br>Le Droit = ensemble des règles qui organisent la vie en société.<br><br><b>Règle de droit :</b> Générale + Obligatoire + Sanctionnée par l'État.<br><b>Exemple :</b> Feu rouge à Aného, tu t'arrêtes sinon amende 5000F.<br><br><b>Constitution</b> = loi suprême.<br><b>Droit Civil</b> = mariage, héritage, contrats.<br><b>Droit Pénal</b> = Contravention < Délit < Crime.<br><br>Tu veux le cours complet ? Paie 1000F Flooz au 97 52 89 50 !";
-if(q.includes('raret')||q.includes('economie')||q.includes('offre')||q.includes('demande')||q.includes('pib')||q.includes('inflation')||q.includes('compta')||q.includes('benefice')) return "📊 <b>ÉCONOMIE - L'essentiel :</b><br><b>Rareté :</b> Besoins illimités, ressources limitées. Tu dois choisir !<br><b>Coût d'opportunité :</b> Ce que tu abandonnes quand tu choisis.<br><b>Offre / Demande :</b> Prix ↑ = Demande ↓, Offre ↑.<br><b>PIB :</b> Richesse totale du pays en 1 an.<br><b>Inflation :</b> Prix montent, argent perd valeur.<br><b>Bénéfice = Recettes - Dépenses.</b><br><br>Cours complet en Premium 1000F !";
-if(q.includes('algorithme')||q.includes('variable')||q.includes('python')||q.includes('boucle')||q.includes('informatique')||q.includes('programmation')||q.includes('base')||q.includes('sql')||q.includes('moyenne')) return "💻 <b>INFORMATIQUE - L'essentiel :</b><br><b>Algorithme :</b> Suite d'étapes claires comme une recette. Ex : Moyenne = Demander 2 notes, Additionner, Diviser par 2, Afficher.<br><b>Variable :</b> Boîte qui garde une valeur. Ex : age = 20.<br><b>Condition :</b> Si moyenne >= 10 Alors 'Validé' Sinon 'Ajourné'.<br><b>Boucle :</b> Répéter. <b>Base de données :</b> Grand tableau, on cherche avec SQL.<br><br>Cours complet en Premium 1000F !";
-if(q.includes('langage')||q.includes('langue')||q.includes('linguistique')||q.includes('litterature')||q.includes('dissertation')||q.includes('sociologie')||q.includes('philosophie')||q.includes('saussure')) return "📖 <b>LETTRES - L'essentiel :</b><br><b>Langage</b> = Capacité humaine. <b>Langue</b> = Système (Français, Ewe, Mina). <b>Parole</b> = Quand TOI tu parles. C'est Saussure.<br><b>Dissertation :</b> Intro (Question + Plan) → Développement (Idée + Exemple) → Conclusion (Réponse).<br><b>Sociologie :</b> Société influence l'individu.<br><b>Philosophie :</b> Socrate 'Connais-toi toi-même'.<br><br>Cours complet en Premium 1000F !";
-if(q.includes('ensemble')||q.includes('fonction')||q.includes('limite')||q.includes('force')||q.includes('atome')||q.includes('science')||q.includes('maths')||q.includes('physique')||q.includes('chimie')) return "🔬 <b>SCIENCES - L'essentiel :</b><br><b>Ensembles :</b> A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}. U = OU, ∩ = ET.<br><b>Fonction :</b> f(x)=2x+1, si x=3, f=7.<br><b>Force :</b> F = m x a.<br><b>Atome :</b> Noyau + Électrons. H2O = Eau.<br><br>Cours complet en Premium 1000F !";
-if(q.includes('cellule')||q.includes('sang')||q.includes('coeur')||q.includes('os')||q.includes('microbe')||q.includes('medecine')||q.includes('anatomie')||q.includes('adn')||q.includes('globule')) return "🩺 <b>MÉDECINE - L'essentiel :</b><br><b>Cellule :</b> Brique de la vie. Membrane + Cytoplasme + Noyau (ADN). 37 000 milliards dans ton corps !<br><b>Sang :</b> Rouges = Oxygène, Blancs = Défense, Plaquettes = Coagulation.<br><b>Cœur :</b> Pompe, 100 000 battements / jour.<br><b>Os :</b> 206 os. Protection + Mouvement + Sang.<br><b>Microbes :</b> Bactéries, Virus, Champignons. Lave-toi les mains !<br><br>Cours complet en Premium 1000F !";
-if(q.includes('bonjour')||q.includes('salut')||q.includes('cava')||q.includes('hello')) return "Salut poto ! 👋 Moi c'est IA CAMPUS. Pose-moi une question sur tes cours : Droit, Éco, Info, Lettres, Sciences ou Médecine. Ex : 'C'est quoi le Droit ?'";
-if(q.includes('qui es')||q.includes('tu es qui')||q.includes('t es qui')) return "Moi c'est <b>IA CAMPUS</b> 🤖, l'IA de COURS CAMPUS. Je connais les 30 leçons par cœur et je réponds 24h/24. Pour les questions compliquées, envoie un WhatsApp au <b>97 52 89 50</b>.";
-return "Hmm, bonne question poto ! 🤔 Je connais bien les 30 leçons de COURS CAMPUS : Droit, Économie, Informatique, Lettres, Sciences, Médecine.<br><br>Essaie de me demander par exemple :<br>• 'C'est quoi le Droit ?'<br>• 'C'est quoi la rareté ?'<br>• 'C'est quoi un algorithme ?'<br>• 'C'est quoi une cellule ?'<br><br>Ou envoie ta question sur WhatsApp au <b>97 52 89 50</b>, le patron va te répondre !";
+
+function showAdmin(){
+  document.getElementById('main').style.display='none';
+  document.getElementById('admin').classList.add('show');
 }
+function backMain(){
+  document.getElementById('admin').classList.remove('show');
+  document.getElementById('main').style.display='block';
+}
+function loginAdmin(){
+  if(document.getElementById('adminPass').value==='ADIKA123'){
+    document.getElementById('adminZone').style.display='block';
+    renderCodes();
+  } else alert('Mot de passe faux !');
+}
+function genCode(){
+  const code = 'CAMPUS-' + Math.floor(1000+Math.random()*9000);
+  lastCode = code;
+  validCodes.push({ code: code, date: Date.now() });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(validCodes));
+  const el = document.getElementById('newCode');
+  el.style.display='block';
+  el.textContent = code + ' - Valable 30 jours à partir d\'aujourd\'hui';
+  document.getElementById('copyBtn').style.display='block';
+  renderCodes();
+}
+function copyCode(){
+  if(!lastCode) return;
+  navigator.clipboard.writeText(lastCode).then(()=> alert('Code copié ! ✅ : ' + lastCode));
+}
+function renderCodes(){
+  const trenteJours = 30 * 24 * 60 * 60 * 1000;
+  const maintenant = Date.now();
+  let html = '<div style="background:#00aaff;color:#fff;padding:10px;border-radius:10px;margin-bottom:10px;"><b>👑 TON CODE PATRON : RASTIZY228</b><br>Ne s\'expire jamais - Ne le donne à personne !</div>';
+  html += validCodes.map(obj=>{
+    const reste = Math.ceil((trenteJours - (maintenant - obj.date)) / (24*60*60*1000));
+    const dateCree = new Date(obj.date).toLocaleDateString('fr-FR');
+    if(reste <= 0){ return '• ' + obj.code + ' - ⏰ EXPIRÉ - créé le ' + dateCree; }
+    else { return '• ' + obj.code + ' - créé le ' + dateCree + ' - reste ' + reste + ' jours'; }
+  }).join('<br>');
+  document.getElementById('listCodes').innerHTML = html;
+  document.getElementById('countCodes').textContent = '(' + validCodes.length + ')';
+}
+updateLocks();
 </script>
 </body>
 </html>

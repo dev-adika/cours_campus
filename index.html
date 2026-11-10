@@ -2,16 +2,12 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COURS CAMPUS - 1000F Premium</title>
+<title>COURS CAMPUS - Université</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#0f172a;color:white}
-header{background:#1e293b;padding:20px;text-align:center}
+header{background:#1e293b;padding:20px;text-align:center;cursor:pointer}
 header h1{color:#38bdf8;font-size:28px}
-.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:15px}
-.stat{background:#1e293b;padding:12px 18px;border-radius:12px;text-align:center}
-.stat b{font-size:20px;color:#facc15;display:block}
-.stat span{font-size:12px;color:#94a3b8}
 .hero{text-align:center;padding:30px 20px}
 .hero h2{font-size:30px}
 .hero p{color:#94a3b8;margin-top:8px}
@@ -25,7 +21,7 @@ header h1{color:#38bdf8;font-size:28px}
 .btn-pay{background:#facc15;color:black;font-size:16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px;padding:20px;max-width:1100px;margin:auto}
 .card{background:#1e293b;padding:20px;border-radius:15px;cursor:pointer}
-.card.locked{opacity:.7;border:1px dashed #facc15}
+.card.locked{opacity:.85;border:1px dashed #facc15}
 .card h3{margin-bottom:6px}
 .card p{color:#94a3b8;font-size:13px;line-height:1.5}
 .badge{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold}
@@ -33,34 +29,27 @@ header h1{color:#38bdf8;font-size:28px}
 #lesson{display:none;max-width:800px;margin:20px auto;background:white;color:#1e293b;padding:25px;border-radius:15px}
 #lesson p,#lesson li{line-height:1.7;font-size:15px;margin-bottom:6px}
 .paybox{background:#fef3c7;padding:20px;border-radius:12px;margin-top:20px;color:#1e293b;text-align:center}
-.paybox input{padding:12px;width:80%;border-radius:10px;border:1px solid #ccc;margin:10px 0}
+.paybox input{padding:12px;width:85%;border-radius:10px;border:1px solid #ccc;margin:10px 0}
 .paybox button{background:#0f172a;color:white;padding:12px 20px;border:none;border-radius:20px;font-weight:bold}
+#adminBox{display:none;max-width:600px;margin:20px auto;background:#facc15;color:black;padding:25px;border-radius:15px;text-align:center}
 footer{text-align:center;padding:30px;color:#64748b;font-size:12px}
-footer a{color:#38bdf8}
 </style>
 </head>
 <body>
-<header><h1>🎓 COURS CAMPUS</h1><p>UNIVERSITÉ - TOUTES LES FACULTÉS</p></header>
-
-<div class="stats">
-<div class="stat"><b id="visits">0</b><span>👁️ Visites totales</span></div>
-<div class="stat"><b id="freeCount">0</b><span>🆓 Gratuits</span></div>
-<div class="stat"><b id="payCount">0</b><span>💰 Payants</span></div>
-<div class="stat"><b id="money">0 F</b><span>💵 Argent gagné</span></div>
-</div>
+<header onclick="logoClick()"><h1>🎓 COURS CAMPUS</h1><p>UNIVERSITÉ - TOUTES LES FACULTÉS</p></header>
 
 <div class="hero"><h2>Apprends à l'Université, sans stress !</h2><p>6 Facultés • Licence 1 • Cours complets</p></div>
 
 <div class="pricing">
-<div class="box"><h3>🆓 GRATUIT - 0F</h3><p style="color:#94a3b8;font-size:14px">Pour tester</p><ul><li>1 Leçon gratuite par faculté</li><li>Accès limité</li><li>Pas de quiz corrigé</li></ul><a class="btn btn-free" href="#cours">Commencer Gratuitement</a></div>
-<div class="box premium"><h3>💎 PREMIUM - 1000F / MOIS</h3><p style="color:#facc15;font-size:14px">⭐ LE PLUS CHOISI</p><ul><li>✅ TOUTES les leçons, TOUTES les facultés</li><li>✅ Tous les quiz + corrections</li><li>✅ Nouveaux cours chaque semaine</li><li>✅ Support WhatsApp</li></ul><a class="btn btn-pay" href="#pay">🔓 DÉBLOQUER POUR 1000F - FLOOZ</a></div>
+<div class="box"><h3>🆓 GRATUIT - 0F</h3><p style="color:#94a3b8;font-size:14px">Pour tester</p><ul><li>1 Leçon gratuite pour tester</li><li>Accès limité</li></ul><a class="btn btn-free" href="#cours">Commencer Gratuitement</a></div>
+<div class="box premium"><h3>💎 PREMIUM - 1000F / MOIS</h3><p style="color:#facc15;font-size:14px">⭐ LE PLUS CHOISI</p><ul><li>✅ TOUTES les leçons, TOUTES les facultés</li><li>✅ Tous les quiz + corrections</li><li>✅ Nouveaux cours chaque semaine</li></ul><a class="btn btn-pay" href="#pay">🔓 DÉBLOQUER POUR 1000F - FLOOZ</a></div>
 </div>
 
 <div id="cours" class="grid">
-<div class="card" onclick="openLesson('droit',true)"><h3>⚖️ DROIT</h3><p>Introduction au Droit - La règle de droit</p><span class="badge free">GRATUIT - Essaie</span></div>
+<div class="card" onclick="openLesson('droit',true)"><h3>⚖️ DROIT</h3><p>Introduction au Droit</p><span class="badge free">GRATUIT - Essaie</span></div>
 <div class="card locked" onclick="openLesson('eco',false)"><h3>📊 ÉCONOMIE</h3><p>Microéconomie - La Rareté</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
-<div class="card locked" onclick="openLesson('info',false)"><h3>💻 INFORMATIQUE</h3><p>Algorithmique - C'est quoi un algorithme ?</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
-<div class="card locked" onclick="openLesson('lettres',false)"><h3>📖 LETTRES</h3><p>Linguistique - Langage, Langue, Parole</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+<div class="card locked" onclick="openLesson('info',false)"><h3>💻 INFORMATIQUE</h3><p>Algorithmique</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
+<div class="card locked" onclick="openLesson('lettres',false)"><h3>📖 LETTRES</h3><p>Linguistique</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
 <div class="card locked" onclick="openLesson('sciences',false)"><h3>🔬 SCIENCES</h3><p>Logique & Ensembles</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
 <div class="card locked" onclick="openLesson('medecine',false)"><h3>🩺 MÉDECINE</h3><p>La Cellule</p><span class="badge lock">🔒 PREMIUM 1000F</span></div>
 </div>
@@ -70,42 +59,39 @@ footer a{color:#38bdf8}
 <h3>💰 PAYER 1000F PAR FLOOZ</h3>
 <p><b>Étape 1 :</b> Envoie <b>1000F</b> par Flooz au numéro :</p>
 <h2 style="font-size:28px;margin:10px 0">📱 TON NUMÉRO FLOOZ ICI</h2>
-<p style="font-size:13px">⚠️ REMPLACE CE NUMÉRO PAR TON VRAI NUMÉRO FLOOZ DANS LE CODE !</p>
-<p><b>Étape 2 :</b> Après paiement, clique sur WhatsApp et envoie ta capture :</p>
-<a href="https://wa.me/22890000000?text=Salut%20j'ai%20pay%C3%A9%201000F%20pour%20COURS%20CAMPUS%20Premium" target="_blank" style="display:inline-block;background:#22c55e;color:white;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin:10px">📲 Envoyer ma preuve sur WhatsApp</a>
-<p style="font-size:13px;margin-top:10px">Étape 3 : Entre le code que je t'envoie après vérification :</p>
+<p><b>Étape 2 :</b> Envoie ta capture sur WhatsApp :</p>
+<a href="https://wa.me/22890000000?text=Salut%20j'ai%20pay%C3%A9%201000F%20pour%20COURS%20CAMPUS" target="_blank" style="display:inline-block;background:#22c55e;color:white;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin:10px">📲 Envoyer ma preuve sur WhatsApp</a>
+<p style="font-size:13px">Étape 3 : Entre le code que le patron t'envoie :</p>
 <input id="code" placeholder="Ex: CAMPUS1000"><br>
 <button onclick="unlock()">Débloquer Premium 🔓</button>
 <p id="msg" style="margin-top:10px;font-weight:bold"></p>
+<p style="font-size:12px;color:#666;margin-top:10px">Code test pour toi patron : CAMPUS1000</p>
 </div>
 </div>
 
-<footer><p><a href="#" onclick="showAdmin();return false">👑 Espace Patron (Admin)</a></p><p id="admin" style="display:none;margin-top:10px;background:#1e293b;padding:15px;border-radius:10px;color:white"></p><p style="margin-top:15px">COURS CAMPUS © 2026 - 1000F / Mois par Flooz</p></footer>
+<div id="adminBox"></div>
+<footer>COURS CAMPUS © 2026 - 1000F / Mois par Flooz</footer>
 
 <script>
-// COMPTEUR VISITES
+// COMPTEURS CACHÉS - PERSONNE NE LES VOIT SAUF TOI
 let v = parseInt(localStorage.getItem('cc_visits')||'0')+1;
 localStorage.setItem('cc_visits',v);
-let freeU = parseInt(localStorage.getItem('cc_free')||'0');
-if(!localStorage.getItem('cc_seen')){freeU++;localStorage.setItem('cc_free',freeU);localStorage.setItem('cc_seen','1')}
+if(!localStorage.getItem('cc_seen')){let f=parseInt(localStorage.getItem('cc_free')||'0')+1;localStorage.setItem('cc_free',f);localStorage.setItem('cc_seen','1')}
 let payU = parseInt(localStorage.getItem('cc_pay')||'0');
-document.getElementById('visits').innerText=v;
-document.getElementById('freeCount').innerText=freeU;
-document.getElementById('payCount').innerText=payU;
-document.getElementById('money').innerText=(payU*1000)+' F';
+let freeU = parseInt(localStorage.getItem('cc_free')||'0');
 let isPremium = localStorage.getItem('cc_premium')=='1';
-if(isPremium){document.querySelectorAll('.card').forEach(c=>{c.classList.remove('locked')})}
+if(isPremium){document.querySelectorAll('.card').forEach(c=>c.classList.remove('locked'))}
 
 const cours={
-droit:`<h2>⚖️ DROIT - Leçon 1 : Introduction au Droit</h2><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Il dit ce qui est permis, interdit, obligatoire.</p><p><b>La règle de droit :</b> Générale, Obligatoire, Sanctionnée par l'État.</p><p><b>Exemple Togo :</b> Feu rouge = tu t'arrêtes, sinon amende. C'est une règle de droit.</p><div style="background:#f0f9ff;padding:12px;border-radius:10px"><b>Quiz :</b> Différence morale / droit ? Réponse : Le droit est sanctionné par l'État.</div>`,
-eco:`<h2>📊 ÉCONOMIE - Microéconomie : La Rareté</h2><p>Besoins illimités, ressources limitées = Rareté. Tu as 5000F, tu veux habit 8000F + livre 3000F, tu dois choisir.</p><p><b>Coût d'opportunité :</b> Ce que tu abandonnes quand tu choisis. Si tu prends le livre, tu perds l'habit.</p>`,
-info:`<h2>💻 INFORMATIQUE - Algorithmique</h2><p>Un algorithme = suite d'étapes claires comme une recette. Ex: Moyenne = 1. Demander 2 notes 2. Additionner 3. Diviser par 2 4. Afficher.</p>`,
-lettres:`<h2>📖 LETTRES - Linguistique</h2><p><b>Langage :</b> Capacité humaine. <b>Langue :</b> Système précis (Français, Ewe, Mina). <b>Parole :</b> Quand TOI tu parles.</p>`,
-sciences:`<h2>🔬 SCIENCES - Logique & Ensembles</h2><p>Ensemble = regroupement. A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}.</p>`,
-medecine:`<h2>🩺 MÉDECINE - La Cellule</h2><p>La cellule = brique de la vie. 37 000 milliards dans ton corps. Membrane = peau, Cytoplasme = liquide, Noyau = cerveau avec ADN.</p>`
+droit:`<h2>⚖️ DROIT - Leçon 1 : Introduction au Droit</h2><p>Le Droit est l'ensemble des règles qui organisent la vie en société.</p><p><b>Règle de droit :</b> Générale, Obligatoire, Sanctionnée par l'État.</p><p><b>Exemple Togo :</b> Feu rouge = tu t'arrêtes, sinon amende.</p>`,
+eco:`<h2>📊 ÉCONOMIE - Microéconomie : La Rareté</h2><p>Besoins illimités, ressources limitées = Rareté. Coût d'opportunité = ce que tu abandonnes quand tu choisis.</p>`,
+info:`<h2>💻 INFORMATIQUE - Algorithmique</h2><p>Un algorithme = suite d'étapes claires comme une recette. Ex: Moyenne = Demander 2 notes, Additionner, Diviser par 2, Afficher.</p>`,
+lettres:`<h2>📖 LETTRES - Linguistique</h2><p><b>Langage :</b> Capacité humaine. <b>Langue :</b> Français, Ewe, Mina. <b>Parole :</b> Quand TOI tu parles.</p>`,
+sciences:`<h2>🔬 SCIENCES - Logique & Ensembles</h2><p>A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}.</p>`,
+medecine:`<h2>🩺 MÉDECINE - La Cellule</h2><p>Cellule = brique de la vie. Membrane, Cytoplasme, Noyau avec ADN.</p>`
 };
 function openLesson(k,isFree){
-if(!isFree && !isPremium){document.getElementById('content').innerHTML='<h2>🔒 Cours Premium</h2><p>Ce cours est réservé aux membres Premium. Paie 1000F par Flooz pour débloquer TOUT !</p>';}
+if(!isFree && !isPremium){document.getElementById('content').innerHTML='<h2>🔒 Cours Premium</h2><p>Ce cours est réservé aux Premium. Paie 1000F par Flooz pour tout débloquer !</p>';}
 else{document.getElementById('content').innerHTML=cours[k];}
 document.querySelector('.grid').style.display='none';document.getElementById('lesson').style.display='block';window.scrollTo(0,0);
 document.getElementById('pay').style.display = (!isFree && !isPremium) ? 'block':'none';
@@ -113,14 +99,18 @@ document.getElementById('pay').style.display = (!isFree && !isPremium) ? 'block'
 function goHome(){document.getElementById('lesson').style.display='none';document.querySelector('.grid').style.display='grid'}
 function unlock(){
 let c=document.getElementById('code').value.trim().toUpperCase();
-if(c=='CAMPUS1000'){localStorage.setItem('cc_premium','1');payU++;localStorage.setItem('cc_pay',payU);document.getElementById('msg').innerText='✅ PREMIUM DÉBLOQUÉ ! Recharge la page, tout est ouvert !';}
+if(c=='CAMPUS1000'){localStorage.setItem('cc_premium','1');payU++;localStorage.setItem('cc_pay',payU);document.getElementById('msg').innerText='✅ PREMIUM DÉBLOQUÉ ! Recharge la page !';}
 else{document.getElementById('msg').innerText='❌ Code faux. Paie d\'abord 1000F et demande ton code sur WhatsApp.'}
 }
-function showAdmin(){
-let pass=prompt('Mot de passe Patron ? (Pour l\'instant c\'est : admin123)');
-if(pass=='admin123'){document.getElementById('admin').style.display='block';document.getElementById('admin').innerHTML='👑 <b>TABLEAU PATRON</b><br>👁️ Visites : '+v+'<br>🆓 Gratuits : '+freeU+'<br>💰 Payants : '+payU+'<br>💵 Argent : '+(payU*1000)+' F<br><br>Code Premium à donner après paiement : <b>CAMPUS1000</b>';}
-else alert('Mauvais mot de passe');
+// ADMIN SECRET - SEULEMENT SI TU METS ?patron=1 DANS LE LIEN
+if(window.location.search.includes('patron=1')){
+let p=prompt('Mot de passe Patron ?');
+if(p=='admin123'){
+document.getElementById('adminBox').style.display='block';
+document.getElementById('adminBox').innerHTML='<h2>👑 TABLEAU PATRON - SECRET</h2><br><h3>👁️ Visites : '+v+'</h3><h3>🆓 Gratuits : '+freeU+'</h3><h3>💰 Payants : '+payU+'</h3><h3>💵 Argent : '+(payU*1000)+' F</h3><br><p>Code à donner aux clients : <b>CAMPUS1000</b></p><p style="font-size:12px">Ne partage jamais ce lien !</p>';
 }
+}
+function logoClick(){}
 </script>
 </body>
 </html>

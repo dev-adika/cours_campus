@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COURS CAMPUS - 1000F Premium</title>
+<title>COURS CAMPUS - IA + 1000F Premium</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#0f172a;color:white}
@@ -14,50 +14,61 @@ header h1{color:#38bdf8;font-size:28px}
 .box.premium{border-color:#facc15;background:#292524}
 .box ul{margin:15px 0 15px 20px;color:#cbd5e1;line-height:1.8;font-size:14px}
 .btn{display:block;text-align:center;padding:12px;border-radius:25px;font-weight:bold;text-decoration:none;margin-top:10px}
-.btn-free{background:#334155;color:white}.btn-pay{background:#facc15;color:black}
+.btn-pay{background:#facc15;color:black}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px;padding:20px;max-width:1100px;margin:auto}
-.card{background:#1e293b;padding:20px;border-radius:15px;cursor:pointer}
-.card.locked{border:1px dashed #facc15}
+.card{background:#1e293b;padding:20px;border-radius:15px;cursor:pointer;border:1px dashed #facc15}
 .card h3{margin-bottom:6px}.card p{color:#94a3b8;font-size:13px;line-height:1.5}
-.badge{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold}
-.free{background:#22c55e;color:black}.lock{background:#facc15;color:black}
+.badge{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold;background:#facc15;color:black}
 .fac{max-width:900px;margin:20px auto;background:#1e293b;padding:20px;border-radius:15px;display:none}
-.lessonBtn{display:block;width:100%;text-align:left;background:#334155;color:white;border:none;padding:13px;margin:8px 0;border-radius:10px;font-size:14px;cursor:pointer}
-.lessonBtn.lockedL{background:#292524;color:#facc15;border:1px dashed #facc15}
+.lessonBtn{display:block;width:100%;text-align:left;background:#292524;color:#facc15;border:1px dashed #facc15;padding:13px;margin:8px 0;border-radius:10px;font-size:14px;cursor:pointer}
+.lessonBtn.unlocked{background:#334155;color:white;border:none}
 #lesson{display:none;max-width:850px;margin:20px auto;background:white;color:#1e293b;padding:28px;border-radius:15px}
 #lesson h2{margin-bottom:12px}#lesson h4{margin:18px 0 8px;color:#0284c7}#lesson p,#lesson li{line-height:1.75;font-size:15px;margin-bottom:8px}#lesson ul{margin-left:20px}
 .paybox{background:#fef3c7;padding:20px;border-radius:12px;margin-top:20px;color:#1e293b;text-align:center}
 .paybox input{padding:12px;width:85%;border-radius:10px;border:1px solid #ccc;margin:10px 0}
 .paybox button{background:#0f172a;color:white;padding:12px 20px;border:none;border-radius:20px;font-weight:bold}
-footer{text-align:center;padding:30px;color:#64748b;font-size:12px}
+/* IA CAMPUS */
+#iaBtn{position:fixed;bottom:20px;right:20px;background:#38bdf8;color:#0f172a;border:none;width:65px;height:65px;border-radius:50%;font-size:30px;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,.4);z-index:999}
+#iaBox{display:none;position:fixed;bottom:95px;right:15px;width:330px;max-width:92vw;height:480px;max-height:75vh;background:white;color:#1e293b;border-radius:15px;overflow:hidden;flex-direction:column;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:999}
+#iaHeader{background:#0f172a;color:white;padding:15px;display:flex;justify-content:space-between;align-items:center}
+#iaHeader b{font-size:15px}
+#iaHeader span{font-size:11px;color:#38bdf8}
+#iaClose{background:none;border:none;color:white;font-size:20px;cursor:pointer}
+#iaMessages{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;background:#f8fafc}
+.msg{padding:10px 12px;border-radius:12px;font-size:14px;line-height:1.5;max-width:85%}
+.msg.ia{background:#e0f2fe;align-self:flex-start}
+.msg.user{background:#0f172a;color:white;align-self:flex-end}
+.msg small{display:block;margin-top:5px;font-size:11px;color:#64748b}
+#iaInputBox{display:flex;padding:10px;gap:8px;border-top:1px solid #e2e8f0;background:white}
+#iaInput{flex:1;padding:11px;border:1px solid #cbd5e1;border-radius:20px;outline:none}
+#iaSend{background:#38bdf8;border:none;padding:11px 16px;border-radius:20px;font-weight:bold;cursor:pointer}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:white;border-top:1px solid #eee}
+.quick button{background:#f1f5f9;border:1px solid #e2e8f0;padding:6px 10px;border-radius:20px;font-size:12px;cursor:pointer}
+footer{text-align:center;padding:30px;color:#64748b;font-size:12px;padding-bottom:80px}
 </style>
 </head>
 <body>
-<header><h1>🎓 COURS CAMPUS</h1><p>UNIVERSITÉ - 30 COURS DÉVELOPPÉS - LICENCE 1</p></header>
-<div class="hero"><h2>30 Cours Développés pour 1000F !</h2><p>6 Facultés • Cours complets, rien que l'essentiel • Exemples du Togo</p></div>
+<header><h1>🎓 COURS CAMPUS</h1><p>UNIVERSITÉ - 30 COURS + IA QUI RÉPOND - LICENCE 1</p></header>
+<div class="hero"><h2>30 Cours + Une IA Qui Répond à Tes Questions !</h2><p>6 Facultés • Tout est Premium 1000F • Pose ta question à l'IA, elle répond direct !</p></div>
 
 <div class="pricing">
-<div class="box"><h3>🆓 GRATUIT - 0F</h3><ul><li>1 Leçon gratuite pour tester</li><li>Pour voir la qualité</li></ul><a class="btn btn-free" href="#cours">Tester Gratuitement</a></div>
-<div class="box premium"><h3>💎 PREMIUM - 1000F / MOIS</h3><ul><li>✅ 30 LEÇONS DÉVELOPPÉES</li><li>✅ 6 Facultés entières</li><li>✅ Définitions + Exemples + Quiz</li><li>✅ Nouveaux cours chaque semaine</li></ul><a class="btn btn-pay" href="#pay">🔓 TOUT DÉBLOQUER - 1000F FLOOZ</a></div>
+<div class="box premium" style="width:100%;max-width:520px;text-align:center"><h3>💎 PREMIUM - 1000F / MOIS - TOUT INCLUS</h3><ul style="text-align:left"><li>✅ 30 LEÇONS DÉVELOPPÉES</li><li>✅ 6 Facultés : Droit, Éco, Info, Lettres, Sciences, Médecine</li><li>✅ 🤖 IA CAMPUS qui répond à tes questions 24h/24</li><li>✅ Définitions + Exemples du Togo + Quiz</li></ul><a class="btn btn-pay" href="#pay">🔓 DÉBLOQUER TOUT POUR 1000F - FLOOZ</a></div>
 </div>
 
 <div id="cours" class="grid">
-<div class="card" onclick="showFac('droit')"><h3>⚖️ DROIT</h3><p>5 Leçons développées</p><span class="badge free">1 Leçon Gratuite</span></div>
-<div class="card" onclick="showFac('eco')"><h3>📊 ÉCONOMIE</h3><p>5 Leçons développées</p><span class="badge lock">🔒 PREMIUM</span></div>
-<div class="card" onclick="showFac('info')"><h3>💻 INFORMATIQUE</h3><p>5 Leçons développées</p><span class="badge lock">🔒 PREMIUM</span></div>
-<div class="card" onclick="showFac('lettres')"><h3>📖 LETTRES</h3><p>5 Leçons développées</p><span class="badge lock">🔒 PREMIUM</span></div>
-<div class="card" onclick="showFac('sciences')"><h3>🔬 SCIENCES</h3><p>5 Leçons développées</p><span class="badge lock">🔒 PREMIUM</span></div>
-<div class="card" onclick="showFac('medecine')"><h3>🩺 MÉDECINE</h3><p>5 Leçons développées</p><span class="badge lock">🔒 PREMIUM</span></div>
+<div class="card" onclick="showFac('droit')"><h3>⚖️ DROIT</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
+<div class="card" onclick="showFac('eco')"><h3>📊 ÉCONOMIE</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
+<div class="card" onclick="showFac('info')"><h3>💻 INFORMATIQUE</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
+<div class="card" onclick="showFac('lettres')"><h3>📖 LETTRES</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
+<div class="card" onclick="showFac('sciences')"><h3>🔬 SCIENCES</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
+<div class="card" onclick="showFac('medecine')"><h3>🩺 MÉDECINE</h3><p>5 Leçons développées</p><span class="badge">🔒 PREMIUM 1000F</span></div>
 </div>
 
-<div id="facBox" class="fac"><button onclick="goHome()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:10px">← Retour</button><h3 id="facTitle"></h3><div id="facLessons"></div></div>
-
-<div id="lesson"><button onclick="backToFac()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:15px">← Retour aux leçons</button><div id="content"></div>
-<div id="pay" class="paybox" style="display:none">
+<div id="facBox" class="fac"><button onclick="goHome()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:10px">← Retour</button><h3 id="facTitle"></h3><div id="facLessons"></div>
+<div id="payFac" class="paybox">
 <h3>💰 PAYER 1000F PAR FLOOZ</h3>
 <p><b>Étape 1 :</b> Envoie <b>1000F</b> par Flooz au :</p>
 <h2 style="font-size:32px;margin:10px 0">📱 97 52 89 50</h2>
-<p style="font-size:13px">Nom : COURS CAMPUS</p>
 <p><b>Étape 2 :</b> Envoie ta capture sur WhatsApp :</p>
 <a href="https://wa.me/22897528950?text=Salut%20j'ai%20pay%C3%A9%201000F%20pour%20COURS%20CAMPUS%20Premium" target="_blank" style="display:inline-block;background:#22c55e;color:white;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin:10px">📲 Envoyer ma preuve sur WhatsApp - 97 52 89 50</a>
 <p style="font-size:13px">Étape 3 : Entre le code UNIQUE que le patron t'envoie :</p>
@@ -66,112 +77,131 @@ footer{text-align:center;padding:30px;color:#64748b;font-size:12px}
 <p id="msg" style="margin-top:10px;font-weight:bold"></p>
 </div>
 </div>
-<footer>COURS CAMPUS © 2026 - 1000F / Mois par Flooz au 97 52 89 50 - WhatsApp 97 52 89 50</footer>
+
+<div id="lesson"><button onclick="backToFac()" style="background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:15px">← Retour aux leçons</button><div id="content"></div></div>
+
+<!-- BOUTON IA -->
+<button id="iaBtn" onclick="toggleIA()">🤖</button>
+<div id="iaBox">
+<div id="iaHeader"><div><b>🤖 IA CAMPUS</b><br><span>● En ligne - Répond instantanément</span></div><button id="iaClose" onclick="toggleIA()">×</button></div>
+<div id="iaMessages"><div class="msg ia">Salut poto ! 👋 Moi c'est <b>IA CAMPUS</b>. Pose-moi une question sur Droit, Éco, Info, Lettres, Sciences ou Médecine, je te réponds avec tes cours !<br><small>Ex : "C'est quoi le Droit ?"</small></div></div>
+<div class="quick"><button onclick="askQuick('C est quoi le droit ?')">⚖️ Droit ?</button><button onclick="askQuick('C est quoi la rareté ?')">📊 Rareté ?</button><button onclick="askQuick('C est quoi un algorithme ?')">💻 Algorithme ?</button><button onclick="askQuick('C est quoi une cellule ?')">🩺 Cellule ?</button><button onclick="askQuick('Comment payer 1000F ?')">💰 Payer ?</button></div>
+<div id="iaInputBox"><input id="iaInput" placeholder="Pose ta question ici..." onkeypress="if(event.key==='Enter') sendIA()"><button id="iaSend" onclick="sendIA()">Envoyer</button></div>
+</div>
+
+<footer>COURS CAMPUS © 2026 - 1000F / Mois par Flooz au 97 52 89 50 - WhatsApp 97 52 89 50<br>🤖 IA CAMPUS - Pose tes questions, elle répond !</footer>
 
 <script>
-// =========================================================
-// 🔑 CODES D'ACCÈS - C'EST TOI LE PATRON QUI LES FAIT !
-// =========================================================
-// POTOO, C'EST ICI QUE TU METS TES CODES !
-// Efface ceux-là et mets TES propres codes, bizarres, que personne ne peut deviner.
-// Exemple : "TOGO-7841-KOFI", "ANEHO-99-ZAZA", "CAMPUS-XYZ-2026"
-// Tu donnes UN code différent à chaque client qui paie.
-// =========================================================
-let mesCodes = [
-"TOGO-7841-KOFI",
-"ANEHO-99-ZAZA",
-"CAMPUS-XYZ-2026",
-"KPALIME-55-LOVE",
-"LOME-2026-8811",
-"AFRIQUE-77-BOSS",
-"ETUDIANT-31-OK",
-"UNIVERSITE-12-PLUS",
-"MOOV-9752-28950",
-"FLOOZ-1000-OK"
-];
-// =========================================================
-
+let mesCodes = ["TOGO-7841-KOFI","ANEHO-99-ZAZA","CAMPUS-XYZ-2026","KPALIME-55-LOVE","LOME-2026-8811","AFRIQUE-77-BOSS","ETUDIANT-31-OK","UNIVERSITE-12-PLUS","MOOV-9752-28950","FLOOZ-1000-OK"];
 let used = JSON.parse(localStorage.getItem('cc_used')||'[]');
 let isPremium = localStorage.getItem('cc_premium')=='1';
 let currentFac = '';
-
 let data = {
 droit: {title:"⚖️ DROIT - 5 Leçons", lessons:[
-["Leçon 1 : Introduction au Droit - GRATUITE","<h4>1. C'est quoi le Droit ?</h4><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Sans Droit, chacun fait ce qu'il veut, c'est l'anarchie. Le Droit dit ce qui est permis, ce qui est interdit, et ce qui est obligatoire.</p><h4>2. La règle de droit a 3 caractères</h4><ul><li><b>Générale :</b> Elle s'applique à tout le monde, pas à une seule personne. Ex : Tout le monde doit respecter le feu rouge.</li><li><b>Obligatoire :</b> On est obligé de la respecter, ce n'est pas un conseil.</li><li><b>Sanctionnée par l'État :</b> Si tu ne respectes pas, l'État te punit : amende, prison.</li></ul><h4>3. Exemple concret au Togo</h4><p>Tu conduis une moto à Aného. Le feu est rouge, tu t'arrêtes. Si tu passes, la police te donne une amende de 5000F. Voilà une règle de droit en action.</p><h4>4. Droit vs Morale</h4><p>La morale dit 'ne mens pas', mais si tu mens, l'État ne te punit pas. Le Droit dit 'ne vole pas', si tu voles, l'État te punit. C'est ça la différence.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Droit = Règle Générale + Obligatoire + Sanctionnée par l'État.<br><b>Quiz :</b> Si ton ami te dit 'tu dois être gentil', c'est du Droit ou de la morale ? <i>Réponse : Morale, car l'État ne punit pas.</i></div>"],
-["Leçon 2 : Droit Constitutionnel","<h4>1. C'est quoi la Constitution ?</h4><p>La Constitution est la loi suprême du pays. Toutes les autres lois doivent la respecter. C'est elle qui organise le pays : qui est Président, comment on vote, quels sont les droits des citoyens.</p><h4>2. Les 3 pouvoirs</h4><ul><li><b>Pouvoir Exécutif :</b> Le Président et le Gouvernement, ils appliquent les lois.</li><li><b>Pouvoir Législatif :</b> L'Assemblée Nationale, elle vote les lois.</li><li><b>Pouvoir Judiciaire :</b> Les juges, ils punissent ceux qui ne respectent pas les lois.</li></ul><h4>3. Exemple Togo</h4><p>Au Togo, la Constitution dit que tout Togolais a droit à l'éducation. Donc si une loi disait 'les filles ne vont pas à l'école', elle serait anti-constitutionnelle, on l'annule.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Constitution > Lois > Règlements. <br><b>Quiz :</b> Qui vote les lois ? <i>Réponse : L'Assemblée Nationale.</i></div>"],
-["Leçon 3 : Droit Civil - Les Personnes","<h4>1. C'est quoi le Droit Civil ?</h4><p>Le Droit Civil s'occupe de ta vie de tous les jours : naissance, mariage, divorce, héritage, contrats, propriété. C'est le Droit des personnes normales, pas de l'État.</p><h4>2. La personnalité juridique</h4><p>Dès ta naissance, tu as des droits : tu as un nom, une nationalité, tu peux hériter. À 18 ans, tu deviens majeur : tu peux voter, signer un contrat, te marier sans autorisation.</p><h4>3. Exemple</h4><p>Kofi a 20 ans, il veut louer une maison à Lomé. Il signe un contrat de location. Ce contrat est du Droit Civil. Si le propriétaire ne respecte pas le contrat, Kofi peut aller au tribunal.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Majeur = 18 ans. Mineur = moins de 18 ans, il est protégé.<br><b>Quiz :</b> À quel âge on devient majeur au Togo ? <i>Réponse : 18 ans.</i></div>"],
-["Leçon 4 : Droit Pénal","<h4>1. C'est quoi le Droit Pénal ?</h4><p>Le Droit Pénal punit ceux qui font du mal à la société. Il y a 3 niveaux d'infractions :</p><ul><li><b>Contravention :</b> Petite faute. Ex : Tu traverses hors passage piéton, tu brûles un feu. Sanction : amende.</li><li><b>Délit :</b> Faute moyenne. Ex : Vol, bagarre, conduite sans permis. Sanction : prison de quelques mois à quelques années + amende.</li><li><b>Crime :</b> Grosse faute. Ex : Meurtre, viol, braquage. Sanction : longue prison, parfois perpétuité.</li></ul><h4>2. Exemple</h4><p>Quelqu'un vole un téléphone à Aného. C'est un délit. Il va au tribunal, le juge peut le condamner à 1 an de prison.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Contravention < Délit < Crime.<br><b>Quiz :</b> Le vol de téléphone, c'est quoi ? <i>Réponse : Un délit.</i></div>"],
-["Leçon 5 : Les Sources du Droit","<h4>1. D'où vient le Droit ?</h4><ul><li><b>La Loi :</b> Votée par l'Assemblée. C'est la source principale. Ex : Code de la route.</li><li><b>La Coutume :</b> Les habitudes du peuple. Ex : Au village, quand il y a un litige de terre, on appelle les chefs.</li><li><b>La Jurisprudence :</b> Les décisions des juges. Quand un juge a déjà jugé un cas pareil, les autres juges suivent.</li><li><b>La Doctrine :</b> Ce que les professeurs de Droit écrivent dans les livres.</li></ul><h4>2. Hiérarchie</h4><p>Constitution en haut, puis Lois, puis Règlements en bas. Une loi ne peut pas contredire la Constitution.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> 4 sources : Loi, Coutume, Jurisprudence, Doctrine.</div>"]
+["Leçon 1 : Introduction au Droit","<h4>1. C'est quoi le Droit ?</h4><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Sans Droit, c'est l'anarchie. Le Droit dit ce qui est permis, interdit, obligatoire.</p><h4>2. Règle de droit : 3 caractères</h4><ul><li><b>Générale :</b> Pour tout le monde.</li><li><b>Obligatoire :</b> On doit respecter.</li><li><b>Sanctionnée par l'État :</b> Amende, prison.</li></ul><h4>3. Exemple Togo</h4><p>Moto à Aného, feu rouge, tu t'arrêtes. Si tu passes, amende 5000F.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Droit = Générale + Obligatoire + Sanctionnée par l'État.</div>"],
+["Leçon 2 : Droit Constitutionnel","<h4>1. Constitution</h4><p>Loi suprême du pays. Toutes les autres lois doivent la respecter.</p><h4>2. 3 pouvoirs</h4><ul><li><b>Exécutif :</b> Président + Gouvernement, appliquent lois.</li><li><b>Législatif :</b> Assemblée, vote lois.</li><li><b>Judiciaire :</b> Juges, punissent.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Constitution > Lois > Règlements.</div>"],
+["Leçon 3 : Droit Civil","<h4>1. C'est quoi ?</h4><p>Vie de tous les jours : naissance, mariage, héritage, contrats.</p><h4>2. Majeur</h4><p>À 18 ans, majeur : voter, signer contrat, se marier.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Majeur = 18 ans.</div>"],
+["Leçon 4 : Droit Pénal","<h4>1. 3 niveaux</h4><ul><li><b>Contravention :</b> Petite faute, amende.</li><li><b>Délit :</b> Vol, bagarre, prison.</li><li><b>Crime :</b> Meurtre, viol, longue prison.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Contravention < Délit < Crime.</div>"],
+["Leçon 5 : Sources du Droit","<h4>1. 4 sources</h4><ul><li>Loi, Coutume, Jurisprudence, Doctrine.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Loi = source principale.</div>"]
 ]},
 eco: {title:"📊 ÉCONOMIE - 5 Leçons", lessons:[
-["Leçon 1 : La Rareté et le Choix","<h4>1. Le problème économique</h4><p>Les besoins des humains sont illimités : on veut toujours plus (téléphone, habit, maison, voiture). Mais les ressources sont limitées : argent limité, temps limité, terre limitée. C'est ça la <b>rareté</b>.</p><h4>2. Le coût d'opportunité</h4><p>Quand tu choisis une chose, tu renonces à une autre. Exemple : Tu as 10000F. Tu hésites entre payer ton inscription (8000F) et acheter un téléphone (10000F). Si tu choisis le téléphone, le coût d'opportunité c'est ton inscription que tu as abandonnée.</p><h4>3. Les 3 questions de l'économie</h4><ul><li>Quoi produire ? Riz ou maïs ?</li><li>Comment produire ? Avec machines ou à la main ?</li><li>Pour qui produire ? Pour les riches ou pour tout le monde ?</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Rareté = Besoins illimités + Ressources limitées.<br><b>Quiz :</b> Tu as 5000F, tu veux un habit et un livre, tu ne peux pas tout prendre, c'est quoi ? <i>Réponse : La rareté.</i></div>"],
-["Leçon 2 : L'Offre et la Demande","<h4>1. La Demande</h4><p>La demande = ce que les gens veulent acheter. Loi de la demande : Quand le prix monte, les gens achètent moins. Quand le prix baisse, ils achètent plus. Ex : Si le sac de riz passe de 15000F à 25000F, les familles vont acheter moins de riz.</p><h4>2. L'Offre</h4><p>L'offre = ce que les vendeurs veulent vendre. Loi de l'offre : Quand le prix monte, les vendeurs veulent vendre plus (parce que ça rapporte). Quand le prix baisse, ils vendent moins.</p><h4>3. Le prix d'équilibre</h4><p>C'est le prix où l'offre = la demande. C'est là que le marché est en paix, il n'y a ni trop de stock, ni pénurie.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Prix ↑ = Demande ↓, Offre ↑.<br><b>Quiz :</b> Si le prix du pain augmente beaucoup, que font les gens ? <i>Réponse : Ils achètent moins de pain.</i></div>"],
-["Leçon 3 : Le PIB","<h4>1. C'est quoi le PIB ?</h4><p>PIB = Produit Intérieur Brut. C'est toute la richesse produite dans un pays en 1 an : tout le riz, tout le maïs, tous les services, tout. Si le PIB du Togo augmente, ça veut dire que le pays produit plus, il devient plus riche.</p><h4>2. PIB par habitant</h4><p>On divise le PIB par le nombre d'habitants. Ça montre en moyenne combien chaque personne produit. Ça permet de comparer Togo et Ghana par exemple.</p><h4>3. Limite du PIB</h4><p>Le PIB ne montre pas si l'argent est bien partagé. Un pays peut avoir un gros PIB mais avec beaucoup de pauvres, si les riches gardent tout.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> PIB = Richesse totale produite en 1 an.</div>"],
-["Leçon 4 : L'Inflation","<h4>1. C'est quoi l'inflation ?</h4><p>L'inflation = les prix montent en général. Hier avec 1000F tu achetais 2 pains, aujourd'hui avec 1000F tu achètes 1 pain. Ton argent a perdu de la valeur.</p><h4>2. Pourquoi ça monte ?</h4><ul><li>Il y a trop d'argent en circulation.</li><li>Les produits deviennent rares (sécheresse, guerre).</li><li>Les vendeurs augmentent pour gagner plus.</li></ul><h4>3. Conséquence</h4><p>Les pauvres souffrent le plus, car leur salaire ne monte pas mais les prix montent. C'est pour ça que la BCEAO essaie de contrôler l'inflation.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Inflation = Prix ↑, Argent perd sa valeur.</div>"],
-["Leçon 5 : Comptabilité de Base","<h4>1. C'est quoi la comptabilité ?</h4><p>La comptabilité = noter tout ce qui entre et tout ce qui sort dans une entreprise. C'est comme un cahier de comptes, mais en pro.</p><h4>2. La formule de base</h4><p><b>Bénéfice = Recettes - Dépenses</b>. Ex : Awa vend des habits. Elle a vendu pour 50000F ce mois. Elle a dépensé 30000F pour acheter les habits + 5000F pour le transport. Bénéfice = 50000 - 35000 = 15000F.</p><h4>3. Si c'est négatif, c'est une perte</h4><p>Si dépenses > recettes, tu perds de l'argent, il faut changer de stratégie.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Bénéfice = Recettes - Dépenses.<br><b>Quiz :</b> Tu vends pour 10000F, tu as dépensé 7000F, bénéfice ? <i>Réponse : 3000F.</i></div>"]
+["Leçon 1 : La Rareté","<h4>1. Problème</h4><p>Besoins illimités, ressources limitées = rareté.</p><h4>2. Coût d'opportunité</h4><p>Tu as 10000F, inscription ou téléphone. Si tu choisis téléphone, tu abandonnes inscription.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Rareté = Besoins illimités + Ressources limitées.</div>"],
+["Leçon 2 : Offre et Demande","<h4>1. Demande</h4><p>Prix monte = achètent moins. Prix baisse = achètent plus.</p><h4>2. Offre</h4><p>Prix monte = vendeurs vendent plus.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Prix ↑ = Demande ↓, Offre ↑.</div>"],
+["Leçon 3 : Le PIB","<p>PIB = Richesse totale produite dans un pays en 1 an. Si PIB Togo monte, pays plus riche.</p>"],
+["Leçon 4 : L'Inflation","<p>Inflation = Prix montent. Hier 1000F = 2 pains, aujourd'hui 1000F = 1 pain. Argent perd valeur.</p>"],
+["Leçon 5 : Comptabilité","<p><b>Bénéfice = Recettes - Dépenses</b>. Vends 50000F, dépenses 35000F, bénéfice 15000F.</p>"]
 ]},
 info: {title:"💻 INFORMATIQUE - 5 Leçons", lessons:[
-["Leçon 1 : Algorithmique","<h4>1. C'est quoi un algorithme ?</h4><p>Un algorithme est une suite d'étapes claires et ordonnées pour résoudre un problème. C'est comme une recette de cuisine : si tu suis les étapes dans l'ordre, tu réussis le plat. Si tu mélanges l'ordre, tu rates.</p><h4>2. Exemple : Calculer la moyenne</h4><ul><li>Étape 1 : Demander la note 1 et la note 2</li><li>Étape 2 : Additionner les 2 notes</li><li>Étape 3 : Diviser le total par 2</li><li>Étape 4 : Afficher le résultat</li></ul><h4>3. Les 3 structures</h4><p><b>Séquence :</b> Étape par étape. <b>Condition :</b> Si... Alors... Sinon... <b>Boucle :</b> Répéter tant que...</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Algorithme = Étapes claires + Ordre précis.<br><b>Quiz :</b> Pour faire du thé, tu mets l'eau avant ou après avoir chauffé ? <i>Réponse : Avant, l'ordre compte !</i></div>"],
-["Leçon 2 : Les Variables","<h4>1. C'est quoi une variable ?</h4><p>Une variable est une boîte qui garde une valeur. Tu mets un nom sur la boîte, et dedans tu mets une valeur. Ex : boîte 'age' = 20, boîte 'nom' = 'Kofi'.</p><h4>2. En Python</h4><p>On écrit : <b>age = 20</b> , <b>nom = 'Kofi'</b> , <b>moyenne = 14.5</b>. L'ordinateur retient ces valeurs pour les utiliser plus tard.</p><h4>3. Pourquoi c'est utile ?</h4><p>Si l'âge change, tu changes juste la valeur dans la boîte, tu ne changes pas tout le programme. C'est plus propre et plus rapide.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Variable = Nom + Valeur. <br><b>Quiz :</b> Si x = 5, puis x = 10, combien vaut x à la fin ? <i>Réponse : 10, la dernière valeur écrase l'ancienne.</i></div>"],
-["Leçon 3 : Les Conditions Si / Sinon","<h4>1. Le principe</h4><p>L'ordinateur doit choisir. On lui dit : <b>Si</b> la condition est vraie, fais ça, <b>Sinon</b> fais autre chose.</p><h4>2. Exemple : Validation</h4><p>Si moyenne >= 10 Alors Afficher 'Validé' Sinon Afficher 'Ajourné'. Si Kofi a 12, il voit 'Validé'. Si Awa a 8, elle voit 'Ajourné'.</p><h4>3. Dans la vie réelle</h4><p>Ton téléphone : Si batterie < 20% Alors afficher 'Batterie faible' Sinon ne rien dire. C'est une condition !</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Si condition vraie → Action 1, sinon → Action 2.</div>"],
-["Leçon 4 : Les Boucles","<h4>1. C'est quoi une boucle ?</h4><p>Une boucle = répéter une action plusieurs fois sans réécrire le code. L'ordinateur ne se fatigue pas, il peut répéter 1000 fois.</p><h4>2. Exemple</h4><p>Pour i de 1 à 5 : Afficher 'Bonjour'. Résultat : Bonjour, Bonjour, Bonjour, Bonjour, Bonjour. Tu as écrit 1 ligne, l'ordinateur a fait 5 fois le travail.</p><h4>3. Attention à la boucle infinie</h4><p>Si tu dis 'Tant que vrai, afficher Bonjour', ça ne s'arrête jamais ! Il faut toujours une condition d'arrêt.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Boucle = Répéter + Condition d'arrêt.</div>"],
-["Leçon 5 : Bases de Données","<h4>1. C'est quoi une base de données ?</h4><p>C'est un grand tableau organisé pour stocker beaucoup d'informations. Ex : L'université stocke tous les étudiants : nom, âge, filière, notes. Sans base de données, ce serait le chaos avec des papiers partout.</p><h4>2. Les tables</h4><p>Chaque table = un sujet. Table Étudiants, Table Professeurs, Table Cours. Chaque ligne = un étudiant. Chaque colonne = une info (nom, âge).</p><h4>3. Le langage SQL</h4><p>Pour chercher, on utilise SQL : <b>SELECT * FROM étudiants WHERE filière = 'Droit'</b> → Ça affiche tous les étudiants en Droit.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Base de données = Stockage organisé + SQL pour chercher.</div>"]
+["Leçon 1 : Algorithmique","<h4>1. C'est quoi ?</h4><p>Suite d'étapes claires comme une recette. Ex : Moyenne = Demander 2 notes, Additionner, Diviser par 2, Afficher.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>À retenir :</b> Algorithme = Étapes + Ordre précis.</div>"],
+["Leçon 2 : Variables","<p>Variable = boîte qui garde une valeur. age = 20, nom = 'Kofi'.</p>"],
+["Leçon 3 : Conditions","<p>Si moyenne >= 10 Alors 'Validé' Sinon 'Ajourné'.</p>"],
+["Leçon 4 : Boucles","<p>Boucle = Répéter. Pour i de 1 à 5 : Afficher 'Bonjour' = 5 fois Bonjour.</p>"],
+["Leçon 5 : Bases de Données","<p>Grand tableau organisé. SQL : SELECT * FROM étudiants WHERE filière = 'Droit'.</p>"]
 ]},
 lettres: {title:"📖 LETTRES - 5 Leçons", lessons:[
-["Leçon 1 : Linguistique - Langage, Langue, Parole","<h4>1. Le Langage</h4><p>Le langage est la capacité que TOUS les humains ont de communiquer. C'est dans notre cerveau. Les animaux communiquent, mais ils n'ont pas de langage comme nous, avec grammaire et phrases complexes.</p><h4>2. La Langue</h4><p>La langue est un système précis, un code partagé par un groupe : le Français, l'Anglais, l'Ewe, le Mina, le Kabye. Chaque langue a ses règles, son vocabulaire.</p><h4>3. La Parole</h4><p>La parole, c'est quand TOI tu utilises la langue à ta façon. Quand tu dis 'Ça va poto ?', c'est TA parole. Un autre dira 'Comment vas-tu ?' C'est la même langue, mais parole différente.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Langage = Capacité, Langue = Système, Parole = Utilisation personnelle. C'est Saussure, le père de la linguistique.<br><b>Quiz :</b> Le Mina est une langue ou un langage ? <i>Réponse : Une langue.</i></div>"],
-["Leçon 2 : Littérature Africaine","<h4>1. Pourquoi c'est important ?</h4><p>La littérature africaine raconte l'Afrique par les Africains, pas par les colons. Elle parle de colonisation, d'indépendance, d'identité, de famille.</p><h4>2. Les grands auteurs</h4><ul><li><b>Chinua Achebe (Nigeria) :</b> 'Le monde s'effondre' - la colonisation vue par un Africain.</li><li><b>Léopold Senghor (Sénégal) :</b> Poète, il a défendu la Négritude, la fierté d'être Noir.</li><li><b>Kofi Awoonor (Ghana/Togo) :</b> Poète, il parle de la terre et des ancêtres.</li></ul><h4>3. Exemple</h4><p>Dans 'Le monde s'effondre', Okonkwo voit son village changer avec l'arrivée des missionnaires. C'est l'histoire de beaucoup de villages au Togo aussi.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Littérature africaine = Raconter l'Afrique par les Africains.</div>"],
-["Leçon 3 : La Dissertation","<h4>1. La structure</h4><p>Dissertation = 3 parties : <b>Introduction, Développement, Conclusion.</b></p><h4>2. Introduction</h4><p>Amener le sujet (phrase d'accroche), poser la problématique (la question), annoncer le plan (je vais parler de 1, puis 2).</p><h4>3. Développement</h4><p>2 ou 3 parties. Chaque partie = 1 idée + 1 exemple + 1 explication. Ne mélange pas les idées !</p><h4>4. Conclusion</h4><p>Tu résumes tes idées et tu réponds à la problématique. Tu peux ouvrir sur une nouvelle question.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Intro = Question + Plan. Développement = Idée + Exemple. Conclusion = Réponse.</div>"],
-["Leçon 4 : La Sociologie","<h4>1. C'est quoi la sociologie ?</h4><p>La sociologie étudie la société : pourquoi les gens se comportent comme ça ? Pourquoi dans un quartier les gens se marient jeunes, dans un autre plus tard ? Ce n'est pas le hasard, c'est la société qui influence.</p><h4>2. Les influences</h4><ul><li><b>Famille :</b> Elle t'apprend les premières règles.</li><li><b>École :</b> Elle t'apprend à vivre avec les autres.</li><li><b>Religion, médias, amis :</b> Ils influencent aussi tes choix.</li></ul><h4>3. Exemple</h4><p>Pourquoi beaucoup de jeunes à Aného veulent aller à Lomé ? Sociologie : parce que la société dit que Lomé = réussite, travail, argent. Ce n'est pas juste un choix personnel.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Sociologie = Comprendre comment la société influence l'individu.</div>"],
-["Leçon 5 : Philosophie - La Vérité","<h4>1. C'est quoi la philosophie ?</h4><p>Philosophie = aimer la sagesse. C'est se poser des questions : C'est quoi la vérité ? C'est quoi le bien ? C'est quoi être libre ?</p><h4>2. Socrate</h4><p>Socrate disait 'Connais-toi toi-même'. Il posait des questions à tout le monde pour les faire réfléchir. Il ne donnait pas les réponses, il faisait chercher.</p><h4>3. Vérité vs Opinion</h4><p>Opinion = 'Je crois que...' Vérité = c'est prouvé, vérifié. Ex : 'Je crois qu'il va pleuvoir' = opinion. 'L'eau bout à 100°C' = vérité vérifiée.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Philosophie = Se poser des questions, ne pas accepter sans réfléchir.</div>"]
+["Leçon 1 : Linguistique","<p><b>Langage</b> = Capacité humaine. <b>Langue</b> = Système (Français, Ewe, Mina). <b>Parole</b> = Quand TOI tu parles. C'est Saussure.</p>"],
+["Leçon 2 : Littérature Africaine","<p>Achebe, Senghor, Kofi Awoonor. Raconter l'Afrique par les Africains.</p>"],
+["Leçon 3 : Dissertation","<p>Intro (Question + Plan) → Développement (Idée + Exemple) → Conclusion (Réponse).</p>"],
+["Leçon 4 : Sociologie","<p>Étudier la société. Famille, École, Religion influencent tes choix.</p>"],
+["Leçon 5 : Philosophie","<p>Socrate : 'Connais-toi toi-même'. Vérité = prouvé, Opinion = 'Je crois...'.</p>"]
 ]},
 sciences: {title:"🔬 SCIENCES - 5 Leçons", lessons:[
-["Leçon 1 : Logique & Ensembles","<h4>1. C'est quoi un ensemble ?</h4><p>Un ensemble est un regroupement d'objets qui ont un point commun. Ex : L'ensemble des étudiants de Licence 1 Droit = {Ali, Awa, Kofi, ...}. On note A = {...}.</p><h4>2. Les opérations</h4><ul><li><b>Union (U) :</b> Tout ce qui est dans A OU dans B. A={1,2,3}, B={3,4,5} → A U B = {1,2,3,4,5}</li><li><b>Intersection (∩) :</b> Ce qui est dans A ET dans B. A ∩ B = {3} (seul 3 est dans les deux)</li><li><b>Complémentaire :</b> Ce qui n'est PAS dans A.</li></ul><h4>3. Exemple concret</h4><p>Dans ta classe : A = ceux qui aiment les maths, B = ceux qui aiment le français. A ∩ B = ceux qui aiment les deux. A U B = ceux qui aiment au moins une des deux.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> U = OU, ∩ = ET.<br><b>Quiz :</b> A={1,2}, B={2,3}, A ∩ B = ? <i>Réponse : {2}</i></div>"],
-["Leçon 2 : Les Fonctions","<h4>1. C'est quoi une fonction ?</h4><p>Une fonction est comme une machine : tu mets un nombre x à l'entrée, la machine le transforme, et ça sort un nombre f(x). Ex : f(x) = 2x + 1. Si tu mets x=3, ça sort f=2*3+1=7.</p><h4>2. Domaine de définition</h4><p>Ce sont les valeurs que tu as le droit de mettre. Ex : f(x)=1/x, tu ne peux pas mettre x=0 car on ne divise pas par 0. Donc domaine = tous les nombres sauf 0.</p><h4>3. Représentation graphique</h4><p>On trace la fonction sur un graphique : axe x horizontal, axe y vertical. Chaque point (x, f(x)) forme une courbe. Ça aide à voir si la fonction monte ou descend.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Fonction = Entrée x → Sortie f(x).<br><b>Quiz :</b> f(x)=3x, si x=4, f=? <i>Réponse : 12.</i></div>"],
-["Leçon 3 : Les Limites","<h4>1. C'est quoi une limite ?</h4><p>La limite, c'est vers quoi tend la fonction quand x s'approche d'une valeur ou devient très grand. Ex : f(x)=1/x, quand x devient très grand (1000, 1000000), f(x) devient très petit, proche de 0. On dit limite = 0.</p><h4>2. Pourquoi c'est utile ?</h4><p>En physique, en économie, on veut savoir ce qui se passe à long terme. Si une population grandit, vers quoi elle tend ? C'est une limite.</p><h4>3. Exemple</h4><p>Tu mets de l'argent à la banque avec intérêts. Au début ça monte vite, puis ça se stabilise. La limite, c'est la valeur maximale que tu vas atteindre.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Limite = Comportement à long terme de la fonction.</div>"],
-["Leçon 4 : Physique - La Force","<h4>1. C'est quoi une force ?</h4><p>Une force est ce qui fait bouger un objet ou le déforme. Tu pousses une table, tu exerces une force. La Terre attire les objets, c'est la force de gravité.</p><h4>2. La formule de Newton</h4><p><b>F = m x a</b>. F = Force, m = masse, a = accélération. Plus la masse est grande, plus il faut de force pour la bouger. C'est pour ça que pousser une voiture est plus dur que pousser une moto.</p><h4>3. Exemple</h4><p>Tu joues au foot à Aného. Tu tapes dans le ballon (force). Le ballon part vite si tu tapes fort (grande force), lentement si tu tapes doucement. C'est F = m x a.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> F = m x a. Plus de masse = Plus de force nécessaire.</div>"],
-["Leçon 5 : Chimie - Les Atomes","<h4>1. C'est quoi un atome ?</h4><p>L'atome est la brique de base de toute la matière. Tout ce que tu vois : table, eau, ton corps, est fait d'atomes. C'est très petit, invisible à l'œil nu.</p><h4>2. Structure</h4><p>Au centre : le noyau (protons + neutrons). Autour : les électrons qui tournent. C'est comme le soleil et les planètes, en miniature.</p><h4>3. Exemple : L'eau</h4><p>Eau = H2O. Ça veut dire 2 atomes d'Hydrogène + 1 atome d'Oxygène. Quand ils se collent, ça fait de l'eau. Si tu changes les atomes, tu changes la matière.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Atome = Noyau + Électrons. H2O = Eau.</div>"]
+["Leçon 1 : Ensembles","<p>A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}. U = OU, ∩ = ET.</p>"],
+["Leçon 2 : Fonctions","<p>f(x)=2x+1, si x=3, f=7. Fonction = Entrée x → Sortie f(x).</p>"],
+["Leçon 3 : Limites","<p>Limite = vers quoi tend la fonction quand x devient très grand.</p>"],
+["Leçon 4 : Force","<p><b>F = m x a</b>. Plus masse grande, plus force nécessaire.</p>"],
+["Leçon 5 : Atomes","<p>Atome = Noyau + Électrons. H2O = 2 Hydrogène + 1 Oxygène = Eau.</p>"]
 ]},
 medecine: {title:"🩺 MÉDECINE - 5 Leçons", lessons:[
-["Leçon 1 : La Cellule","<h4>1. C'est quoi une cellule ?</h4><p>La cellule est la plus petite unité de la vie. Ton corps est fait d'environ 37 000 milliards de cellules ! C'est comme des petites briques qui, collées ensemble, forment ton corps.</p><h4>2. Les 3 parties principales</h4><ul><li><b>Membrane :</b> La peau de la cellule. Elle protège et laisse entrer ce qui est bon, sortir ce qui est mauvais.</li><li><b>Cytoplasme :</b> Le liquide à l'intérieur. C'est là que tout le travail se fait.</li><li><b>Noyau :</b> Le cerveau de la cellule. Il contient l'ADN, ton code génétique. C'est lui qui dit à la cellule quoi faire.</li></ul><h4>3. Exemple</h4><p>Les globules rouges sont des cellules qui transportent l'oxygène. Elles n'ont pas de noyau pour laisser plus de place à l'oxygène. C'est intelligent !</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Cellule = Membrane + Cytoplasme + Noyau (ADN).<br><b>Quiz :</b> Où se trouve l'ADN ? <i>Réponse : Dans le noyau.</i></div>"],
-["Leçon 2 : Le Sang","<h4>1. C'est quoi le sang ?</h4><p>Le sang est un liquide qui circule dans tout ton corps. Il transporte l'oxygène, la nourriture, et il défend contre les maladies. Sans sang, tu ne peux pas vivre.</p><h4>2. Les 3 types de cellules du sang</h4><ul><li><b>Globules rouges :</b> Ils transportent l'oxygène. Ils sont rouges à cause du fer. Si tu manques de fer, tu as l'anémie, tu es fatigué.</li><li><b>Globules blancs :</b> Ce sont les soldats. Ils attaquent les microbes qui veulent te rendre malade.</li><li><b>Plaquettes :</b> Elles bouchent les blessures. Quand tu te coupes, les plaquettes forment un caillot pour arrêter le sang.</li></ul><h4>3. Exemple</h4><p>Quand tu as le palu, les globules blancs se battent contre le parasite du palu. C'est pour ça que tu as de la fièvre : c'est ton corps qui se bat.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Rouges = Oxygène, Blancs = Défense, Plaquettes = Coagulation.</div>"],
-["Leçon 3 : Le Cœur","<h4>1. C'est quoi le cœur ?</h4><p>Le cœur est une pompe, un muscle qui ne s'arrête jamais. Il bat environ 100 000 fois par jour ! Il envoie le sang partout dans ton corps.</p><h4>2. Comment ça marche ?</h4><p>Le cœur a 4 chambres : 2 oreillettes en haut, 2 ventricules en bas. Le sang arrive, le cœur se contracte, il pousse le sang dans les artères, vers tout le corps. Puis il se relâche, il se remplit à nouveau. C'est le battement que tu sens.</p><h4>3. Pourquoi il faut le protéger ?</h4><p>Si tu fumes, tu manges trop gras, tu ne fais pas de sport, ton cœur se fatigue. Il faut manger équilibré, bouger, éviter le tabac.</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Cœur = Pompe qui bat 100 000 fois / jour.</div>"],
-["Leçon 4 : L'Anatomie - Les Os","<h4>1. Combien d'os ?</h4><p>Le corps adulte a 206 os. Le bébé en a plus de 300, mais certains se collent en grandissant.</p><h4>2. À quoi ça sert ?</h4><ul><li><b>Protéger :</b> Le crâne protège le cerveau, les côtes protègent le cœur et les poumons.</li><li><b>Bouger :</b> Sans os, tu serais comme une méduse, tu ne pourrais pas marcher. Les muscles tirent sur les os pour bouger.</li><li><b>Fabriquer le sang :</b> Dans la moelle des os, on fabrique les globules rouges et blancs.</li></ul><h4>3. Exemple</h4><p>Quand tu te casses le bras, l'os se répare tout seul en quelques semaines si tu le mets dans un plâtre. Le corps est bien fait !</p><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> 206 os = Protection + Mouvement + Fabrication du sang.</div>"],
-["Leçon 5 : Les Microbes","<h4>1. C'est quoi un microbe ?</h4><p>Un microbe est un être vivant très petit, invisible. Il y a 3 types : <b>Bactéries, Virus, Champignons.</b> Certains sont gentils (ceux dans ton intestin qui aident à digérer), d'autres sont méchants (ceux qui donnent le palu, le choléra).</p><h4>2. Comment ils nous rendent malades ?</h4><p>Ils entrent dans ton corps par la bouche, le nez, une blessure. Ils se multiplient vite, ils attaquent tes cellules. Ton corps se défend avec la fièvre et les globules blancs.</p><h4>3. Comment se protéger ?</h4><ul><li>Se laver les mains avec du savon.</li><li>Boire de l'eau propre.</li><li>Se couvrir quand on tousse.</li><li>Se faire vacciner.</li></ul><div style='background:#f0f9ff;padding:12px;border-radius:10px'><b>📝 À retenir :</b> Microbes = Bactéries, Virus, Champignons. Se laver les mains = meilleure protection.</div>"]
+["Leçon 1 : La Cellule","<p>Cellule = brique de la vie. Membrane + Cytoplasme + Noyau (ADN). 37 000 milliards dans ton corps.</p>"],
+["Leçon 2 : Le Sang","<p>Rouges = Oxygène, Blancs = Défense, Plaquettes = Coagulation.</p>"],
+["Leçon 3 : Le Cœur","<p>Cœur = Pompe, 100 000 battements / jour.</p>"],
+["Leçon 4 : Les Os","<p>206 os. Protection + Mouvement + Fabrication du sang.</p>"],
+["Leçon 5 : Microbes","<p>Bactéries, Virus, Champignons. Se laver les mains = meilleure protection.</p>"]
 ]}
 };
-
 function showFac(f){
 currentFac=f;document.querySelector('.grid').style.display='none';document.getElementById('facBox').style.display='block';
 document.getElementById('facTitle').innerText=data[f].title;
 let html='';
 data[f].lessons.forEach((l,i)=>{
-let isFree = (f=='droit' && i==0);
-let locked = !isFree && !isPremium;
-html+=`<button class="lessonBtn ${locked?'lockedL':''}" onclick="openLesson('${f}',${i})">${locked?'🔒 ':''}${l[0]} ${locked?'- PREMIUM 1000F':''}</button>`;
+let locked = !isPremium;
+html+=`<button class="lessonBtn ${locked?'':'unlocked'}" onclick="openLesson('${f}',${i})">${locked?'🔒 ':''}${l[0]} ${locked?'- PREMIUM 1000F':''}</button>`;
 });
 document.getElementById('facLessons').innerHTML=html;
+document.getElementById('payFac').style.display = isPremium ? 'none':'block';
 }
 function openLesson(f,i){
-let isFree = (f=='droit' && i==0);
+if(!isPremium){
 document.getElementById('facBox').style.display='none';document.getElementById('lesson').style.display='block';
-if(!isFree && !isPremium){
-document.getElementById('content').innerHTML='<h2>🔒 Cours Premium</h2><p>Ce cours est réservé aux Premium. Paie 1000F par Flooz au <b>97 52 89 50</b> pour débloquer les 30 leçons développées !</p>';
-document.getElementById('pay').style.display='block';
-}else{
-document.getElementById('content').innerHTML='<h2>'+data[f].lessons[i][0]+'</h2>'+data[f].lessons[i][1];
-document.getElementById('pay').style.display='none';
+document.getElementById('content').innerHTML='<h2>🔒 Cours Premium - BLOQUÉ</h2><p>Tout est bloqué, même Droit ! Paie 1000F par Flooz au <b>97 52 89 50</b> pour tout débloquer !</p><div style="background:#fef3c7;padding:15px;border-radius:10px;text-align:center">Envoie 1000F Flooz au <b>97 52 89 50</b><br>Envoie capture sur WhatsApp <b>97 52 89 50</b><br>Puis entre ton code ci-dessous</div><div style="text-align:center;margin-top:15px"><input id="code2" placeholder="Entre ton code" style="padding:12px;width:80%;border-radius:10px;border:1px solid #ccc"><br><br><button onclick="unlock2()" style="background:#0f172a;color:white;padding:12px 20px;border:none;border-radius:20px;font-weight:bold">Débloquer 🔓</button><p id="msg2" style="margin-top:10px;font-weight:bold"></p></div>';
+window.scrollTo(0,0);return;
 }
+document.getElementById('facBox').style.display='none';document.getElementById('lesson').style.display='block';
+document.getElementById('content').innerHTML='<h2>'+data[f].lessons[i][0]+'</h2>'+data[f].lessons[i][1];
 window.scrollTo(0,0);
 }
 function goHome(){document.getElementById('facBox').style.display='none';document.querySelector('.grid').style.display='grid'}
 function backToFac(){document.getElementById('lesson').style.display='none';showFac(currentFac)}
-function unlock(){
-let c=document.getElementById('code').value.trim().toUpperCase();
-if(mesCodes.includes(c) && !used.includes(c)){
-used.push(c);localStorage.setItem('cc_used',JSON.stringify(used));localStorage.setItem('cc_premium','1');
-document.getElementById('msg').innerText='✅ PREMIUM DÉBLOQUÉ ! Recharge la page, les 30 leçons sont ouvertes !';
-}else if(used.includes(c)){document.getElementById('msg').innerText='❌ Ce code a déjà été utilisé !';}
-else{document.getElementById('msg').innerText='❌ Code faux. Paie 1000F au 97 52 89 50 et demande ton code UNIQUE sur WhatsApp.';}
+function unlock(){checkCode(document.getElementById('code').value.trim().toUpperCase(),'msg')}
+function unlock2(){checkCode(document.getElementById('code2').value.trim().toUpperCase(),'msg2')}
+function checkCode(c,msgId){
+if(mesCodes.includes(c) && !used.includes(c)){used.push(c);localStorage.setItem('cc_used',JSON.stringify(used));localStorage.setItem('cc_premium','1');document.getElementById(msgId).innerText='✅ PREMIUM DÉBLOQUÉ ! Recharge la page !';}
+else if(used.includes(c)){document.getElementById(msgId).innerText='❌ Ce code a déjà été utilisé !';}
+else{document.getElementById(msgId).innerText='❌ Code faux. Paie 1000F au 97 52 89 50 et demande ton code UNIQUE sur WhatsApp.';}
+}
+
+// ============ IA CAMPUS ============
+function toggleIA(){
+let b=document.getElementById('iaBox');
+b.style.display = b.style.display==='flex' ? 'none':'flex';
+}
+function askQuick(q){document.getElementById('iaInput').value=q;sendIA();}
+function sendIA(){
+let input=document.getElementById('iaInput');
+let q=input.value.trim();
+if(!q) return;
+addMsg(q,'user');
+input.value='';
+setTimeout(()=>{addMsg(getAIAnswer(q),'ia')},600);
+}
+function addMsg(text,who){
+let box=document.getElementById('iaMessages');
+let d=document.createElement('div');d.className='msg '+who;d.innerHTML=text;
+box.appendChild(d);box.scrollTop=box.scrollHeight;
+}
+function getAIAnswer(q){
+q=q.toLowerCase();
+if(q.includes('payer')||q.includes('paiement')||q.includes('1000')||q.includes('flooz')||q.includes('premium')||q.includes('prix')||q.includes('cout')||q.includes('abonner')) return "💰 Pour débloquer TOUT :<br><br><b>1.</b> Envoie <b>1000F</b> par Flooz au <b>97 52 89 50</b><br><b>2.</b> Envoie ta capture sur WhatsApp au <b>97 52 89 50</b><br><b>3.</b> Le patron t'envoie ton code UNIQUE, tu le mets et tout s'ouvre ! 30 leçons !";
+if(q.includes('droit')||q.includes('regle')||q.includes('constitution')||q.includes('penal')||q.includes('civil')) return "⚖️ <b>DROIT - L'essentiel :</b><br>Le Droit = ensemble des règles qui organisent la vie en société.<br><br><b>Règle de droit :</b> Générale + Obligatoire + Sanctionnée par l'État.<br><b>Exemple :</b> Feu rouge à Aného, tu t'arrêtes sinon amende 5000F.<br><br><b>Constitution</b> = loi suprême.<br><b>Droit Civil</b> = mariage, héritage, contrats.<br><b>Droit Pénal</b> = Contravention < Délit < Crime.<br><br>Tu veux le cours complet ? Paie 1000F Flooz au 97 52 89 50 !";
+if(q.includes('raret')||q.includes('economie')||q.includes('offre')||q.includes('demande')||q.includes('pib')||q.includes('inflation')||q.includes('compta')||q.includes('benefice')) return "📊 <b>ÉCONOMIE - L'essentiel :</b><br><b>Rareté :</b> Besoins illimités, ressources limitées. Tu dois choisir !<br><b>Coût d'opportunité :</b> Ce que tu abandonnes quand tu choisis.<br><b>Offre / Demande :</b> Prix ↑ = Demande ↓, Offre ↑.<br><b>PIB :</b> Richesse totale du pays en 1 an.<br><b>Inflation :</b> Prix montent, argent perd valeur.<br><b>Bénéfice = Recettes - Dépenses.</b><br><br>Cours complet en Premium 1000F !";
+if(q.includes('algorithme')||q.includes('variable')||q.includes('python')||q.includes('boucle')||q.includes('informatique')||q.includes('programmation')||q.includes('base')||q.includes('sql')||q.includes('moyenne')) return "💻 <b>INFORMATIQUE - L'essentiel :</b><br><b>Algorithme :</b> Suite d'étapes claires comme une recette. Ex : Moyenne = Demander 2 notes, Additionner, Diviser par 2, Afficher.<br><b>Variable :</b> Boîte qui garde une valeur. Ex : age = 20.<br><b>Condition :</b> Si moyenne >= 10 Alors 'Validé' Sinon 'Ajourné'.<br><b>Boucle :</b> Répéter. <b>Base de données :</b> Grand tableau, on cherche avec SQL.<br><br>Cours complet en Premium 1000F !";
+if(q.includes('langage')||q.includes('langue')||q.includes('linguistique')||q.includes('litterature')||q.includes('dissertation')||q.includes('sociologie')||q.includes('philosophie')||q.includes('saussure')) return "📖 <b>LETTRES - L'essentiel :</b><br><b>Langage</b> = Capacité humaine. <b>Langue</b> = Système (Français, Ewe, Mina). <b>Parole</b> = Quand TOI tu parles. C'est Saussure.<br><b>Dissertation :</b> Intro (Question + Plan) → Développement (Idée + Exemple) → Conclusion (Réponse).<br><b>Sociologie :</b> Société influence l'individu.<br><b>Philosophie :</b> Socrate 'Connais-toi toi-même'.<br><br>Cours complet en Premium 1000F !";
+if(q.includes('ensemble')||q.includes('fonction')||q.includes('limite')||q.includes('force')||q.includes('atome')||q.includes('science')||q.includes('maths')||q.includes('physique')||q.includes('chimie')) return "🔬 <b>SCIENCES - L'essentiel :</b><br><b>Ensembles :</b> A={1,2,3}, B={3,4,5}. A U B = {1,2,3,4,5}, A ∩ B = {3}. U = OU, ∩ = ET.<br><b>Fonction :</b> f(x)=2x+1, si x=3, f=7.<br><b>Force :</b> F = m x a.<br><b>Atome :</b> Noyau + Électrons. H2O = Eau.<br><br>Cours complet en Premium 1000F !";
+if(q.includes('cellule')||q.includes('sang')||q.includes('coeur')||q.includes('os')||q.includes('microbe')||q.includes('medecine')||q.includes('anatomie')||q.includes('adn')||q.includes('globule')) return "🩺 <b>MÉDECINE - L'essentiel :</b><br><b>Cellule :</b> Brique de la vie. Membrane + Cytoplasme + Noyau (ADN). 37 000 milliards dans ton corps !<br><b>Sang :</b> Rouges = Oxygène, Blancs = Défense, Plaquettes = Coagulation.<br><b>Cœur :</b> Pompe, 100 000 battements / jour.<br><b>Os :</b> 206 os. Protection + Mouvement + Sang.<br><b>Microbes :</b> Bactéries, Virus, Champignons. Lave-toi les mains !<br><br>Cours complet en Premium 1000F !";
+if(q.includes('bonjour')||q.includes('salut')||q.includes('cava')||q.includes('hello')) return "Salut poto ! 👋 Moi c'est IA CAMPUS. Pose-moi une question sur tes cours : Droit, Éco, Info, Lettres, Sciences ou Médecine. Ex : 'C'est quoi le Droit ?'";
+if(q.includes('qui es')||q.includes('tu es qui')||q.includes('t es qui')) return "Moi c'est <b>IA CAMPUS</b> 🤖, l'IA de COURS CAMPUS. Je connais les 30 leçons par cœur et je réponds 24h/24. Pour les questions compliquées, envoie un WhatsApp au <b>97 52 89 50</b>.";
+return "Hmm, bonne question poto ! 🤔 Je connais bien les 30 leçons de COURS CAMPUS : Droit, Économie, Informatique, Lettres, Sciences, Médecine.<br><br>Essaie de me demander par exemple :<br>• 'C'est quoi le Droit ?'<br>• 'C'est quoi la rareté ?'<br>• 'C'est quoi un algorithme ?'<br>• 'C'est quoi une cellule ?'<br><br>Ou envoie ta question sur WhatsApp au <b>97 52 89 50</b>, le patron va te répondre !";
 }
 </script>
 </body>

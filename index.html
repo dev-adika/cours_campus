@@ -1,144 +1,63 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COURS CAMPUS - By ADIKA - Lomé</title>
-<link rel="stylesheet" href="style.css">
+<title>COURS CAMPUS - Université</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f172a;color:white}
+header{background:#1e293b;padding:20px;text-align:center;position:sticky;top:0}
+header h1{font-size:28px;color:#38bdf8}
+header p{color:#cbd5e1;margin-top:5px}
+.hero{text-align:center;padding:40px 20px}
+.hero h2{font-size:32px;margin-bottom:10px}
+.hero p{color:#94a3b8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px;max-width:1100px;margin:auto}
+.card{background:#1e293b;border-radius:15px;padding:25px;cursor:pointer;border:2px solid transparent;transition:.3s}
+.card:hover{border-color:#38bdf8;transform:translateY(-5px)}
+.card .icon{font-size:40px;margin-bottom:10px}
+.card h3{margin-bottom:8px}
+.card p{color:#94a3b8;font-size:14px;line-height:1.5}
+.card span{display:inline-block;margin-top:15px;background:#38bdf8;color:#0f172a;padding:8px 15px;border-radius:20px;font-weight:bold;font-size:13px}
+#lesson{display:none;max-width:800px;margin:20px auto;background:white;color:#1e293b;padding:30px;border-radius:15px}
+#lesson h2{margin-bottom:10px}
+#lesson h4{margin:20px 0 8px;color:#0284c7}
+#lesson p, #lesson li{line-height:1.7;font-size:15px;margin-bottom:8px}
+#lesson ul{margin-left:20px}
+.quiz{background:#f0f9ff;padding:15px;border-radius:10px;margin-top:20px}
+button{cursor:pointer}
+.back{background:#0f172a;color:white;border:none;padding:10px 20px;border-radius:20px;margin-bottom:20px}
+footer{text-align:center;padding:30px;color:#64748b;font-size:13px}
+</style>
 </head>
 <body>
+<header><h1>🎓 COURS CAMPUS</h1><p>TOUTES LES FACULTÉS - LICENCE 1 - UNIVERSITÉ</p></header>
+<div class="hero"><h2>Choisis ta Faculté</h2><p>6 Facultés • Vrais cours d'université • 100% Gratuit</p></div>
 
-<header>
-<h1>🎓 COURS CAMPUS</h1>
-<p>By ADIKA - Lomé, Togo 🇹🇬</p>
-<p>Cours + Quiz + Fiches - Université de Lomé</p>
-<div class="badge">🔥 GRATUIT POUR COMMENCER</div>
-</header>
-
-<!-- CHOSES INTERESSANTES 1 : COURS -->
-<section>
-<h2>📚 Nos Cours</h2>
-<p class="desc">Choisis ta filière, révise, fais le quiz !</p>
-<div class="card"><h3>⚖️ Droit - Introduction</h3><p>Sources, branches, Constitution du Togo.</p><p class="price">GRATUIT</p><a class="btn btn-dark" href="#quiz">👉 QUIZ DROIT</a></div>
-<div class="card"><h3>💰 Éco - Microéconomie</h3><p>Offre, demande, prix d'équilibre. Type FASEG.</p><p class="price">GRATUIT</p><a class="btn btn-dark" href="#quiz">👉 QUIZ ÉCO</a></div>
-<div class="card"><h3>🇬🇧 Anglais - Grammar</h3><p>Present Simple, vocabulaire campus.</p><p class="price">GRATUIT</p><a class="btn btn-dark" href="#quiz">👉 QUIZ ANGLAIS</a></div>
-<div class="card"><h3>🧮 Maths - Équations</h3><p>2x+5=15, dérivées, limites.</p><p class="price">GRATUIT</p><a class="btn btn-dark" href="#quiz">👉 QUIZ MATHS</a></div>
-<div class="card"><h3>🩺 Médecine - Anatomie</h3><p>Coeur, os, corps humain. QCM concours.</p><p class="price">GRATUIT</p><a class="btn btn-dark" href="#quiz">👉 QUIZ MÉDECINE</a></div>
-</section>
-
-<!-- CHOSES INTERESSANTES 2 : QUIZ -->
-<section id="quiz">
-<h2>🎯 Quiz du Jour</h2>
-<p class="desc">Réponds, vois ton score direct sur le site. Pas besoin de WhatsApp pour jouer !</p>
-<div class="tabs">
-<div class="tab active" onclick="showQuiz('droit',this)">Droit</div>
-<div class="tab" onclick="showQuiz('eco',this)">Éco</div>
-<div class="tab" onclick="showQuiz('anglais',this)">Anglais</div>
-<div class="tab" onclick="showQuiz('maths',this)">Maths</div>
-<div class="tab" onclick="showQuiz('medecine',this)">Médecine</div>
+<div class="grid" id="home">
+<div class="card" onclick="openLesson('droit')"><div class="icon">⚖️</div><h3>DROIT</h3><p>Droit Constitutionnel, Droit Civil, Introduction au Droit. Pour les futurs juristes.</p><span>Ouvrir le cours →</span></div>
+<div class="card" onclick="openLesson('eco')"><div class="icon">📊</div><h3>ÉCONOMIE & GESTION</h3><p>Microéconomie, Macroéconomie, Comptabilité, Marketing. Pour les futurs managers.</p><span>Ouvrir le cours →</span></div>
+<div class="card" onclick="openLesson('info')"><div class="icon">💻</div><h3>INFORMATIQUE</h3><p>Algorithmique, Programmation, Bases de Données, Réseaux. Pour les futurs développeurs.</p><span>Ouvrir le cours →</span></div>
+<div class="card" onclick="openLesson('lettres')"><div class="icon">📖</div><h3>LETTRES & SCIENCES HUMAINES</h3><p>Linguistique, Littérature, Histoire, Philosophie, Sociologie.</p><span>Ouvrir le cours →</span></div>
+<div class="card" onclick="openLesson('sciences')"><div class="icon">🔬</div><h3>SCIENCES</h3><p>Mathématiques, Physique, Chimie, Biologie. Licence Sciences.</p><span>Ouvrir le cours →</span></div>
+<div class="card" onclick="openLesson('medecine')"><div class="icon">🩺</div><h3>MÉDECINE & SANTÉ</h3><p>Anatomie, Biologie Cellulaire, Physiologie. Pour les futurs médecins.</p><span>Ouvrir le cours →</span></div>
 </div>
 
-<div id="quiz-droit" class="quiz-block">
-<p class="quiz-q">1. Qu'est-ce que la Constitution ?</p><div class="opt" onclick="check(this,1)">A) La loi suprême du pays</div><div class="opt" onclick="check(this,0)">B) Un journal</div><div class="opt" onclick="check(this,0)">C) Une chanson</div>
-<p class="quiz-q">2. Droit pénal = ?</p><div class="opt" onclick="check(this,0)">A) Mariages</div><div class="opt" onclick="check(this,1)">B) Infractions et peines</div><div class="opt" onclick="check(this,0)">C) Impôts</div>
-<p class="quiz-q">3. Qui vote les lois au Togo ?</p><div class="opt" onclick="check(this,1)">A) Assemblée Nationale</div><div class="opt" onclick="check(this,0)">B) Le Maire</div><div class="opt" onclick="check(this,0)">C) Le Prof</div>
-<p class="quiz-q">4. Un contrat doit être ?</p><div class="opt" onclick="check(this,0)">A) Secret</div><div class="opt" onclick="check(this,1)">B) Libre et consenti</div><div class="opt" onclick="check(this,0)">C) Payant</div>
-<p class="quiz-q">5. Capitale du Togo ?</p><div class="opt" onclick="check(this,1)">A) Lomé</div><div class="opt" onclick="check(this,0)">B) Aného</div><div class="opt" onclick="check(this,0)">C) Kara</div>
-</div>
+<div id="lesson"><button class="back" onclick="goHome()">← Retour aux Facultés</button><div id="content"></div></div>
+<footer>COURS CAMPUS © 2026 - Fait par un étudiant, pour les étudiants.</footer>
 
-<div id="quiz-eco" class="quiz-block hidden">
-<p class="quiz-q">1. Si prix monte, demande ?</p><div class="opt" onclick="check(this,0)">A) Monte</div><div class="opt" onclick="check(this,1)">B) Baisse</div><div class="opt" onclick="check(this,0)">C) Ne bouge pas</div>
-<p class="quiz-q">2. 2x+5=15, x=?</p><div class="opt" onclick="check(this,0)">A) 3</div><div class="opt" onclick="check(this,1)">B) 5</div><div class="opt" onclick="check(this,0)">C) 10</div>
-<p class="quiz-q">3. PIB mesure ?</p><div class="opt" onclick="check(this,1)">A) Richesse produite</div><div class="opt" onclick="check(this,0)">B) Nb étudiants</div><div class="opt" onclick="check(this,0)">C) Prix du pain</div>
-<p class="quiz-q">4. Monopole = ?</p><div class="opt" onclick="check(this,1)">A) Un seul vendeur</div><div class="opt" onclick="check(this,0)">B) Beaucoup</div><div class="opt" onclick="check(this,0)">C) Aucun</div>
-<p class="quiz-q">5. Offre + Demande = ?</p><div class="opt" onclick="check(this,1)">A) Prix d'équilibre</div><div class="opt" onclick="check(this,0)">B) Marché</div><div class="opt" onclick="check(this,0)">C) Supermarché</div>
-</div>
-
-<div id="quiz-anglais" class="quiz-block hidden">
-<p class="quiz-q">1. She ___ to school.</p><div class="opt" onclick="check(this,1)">A) goes</div><div class="opt" onclick="check(this,0)">B) go</div><div class="opt" onclick="check(this,0)">C) going</div>
-<p class="quiz-q">2. I ___ yesterday.</p><div class="opt" onclick="check(this,0)">A) do</div><div class="opt" onclick="check(this,1)">B) did</div><div class="opt" onclick="check(this,0)">C) does</div>
-<p class="quiz-q">3. Book = ?</p><div class="opt" onclick="check(this,1)">A) Livre</div><div class="opt" onclick="check(this,0)">B) Table</div><div class="opt" onclick="check(this,0)">C) Porte</div>
-<p class="quiz-q">4. ___ are you ?</p><div class="opt" onclick="check(this,1)">A) How</div><div class="opt" onclick="check(this,0)">B) When</div><div class="opt" onclick="check(this,0)">C) Where</div>
-<p class="quiz-q">5. Plural de Child ?</p><div class="opt" onclick="check(this,0)">A) Childs</div><div class="opt" onclick="check(this,1)">B) Children</div><div class="opt" onclick="check(this,0)">C) Childes</div>
-</div>
-
-<div id="quiz-maths" class="quiz-block hidden">
-<p class="quiz-q">1. 5+5x2=?</p><div class="opt" onclick="check(this,0)">A) 20</div><div class="opt" onclick="check(this,1)">B) 15</div><div class="opt" onclick="check(this,0)">C) 12</div>
-<p class="quiz-q">2. 10% de 1000F=?</p><div class="opt" onclick="check(this,1)">A) 100F</div><div class="opt" onclick="check(this,0)">B) 10F</div><div class="opt" onclick="check(this,0)">C) 1000F</div>
-<p class="quiz-q">3. Racine 16=?</p><div class="opt" onclick="check(this,0)">A) 8</div><div class="opt" onclick="check(this,1)">B) 4</div><div class="opt" onclick="check(this,0)">C) 2</div>
-<p class="quiz-q">4. 2x=10, x=?</p><div class="opt" onclick="check(this,1)">A) 5</div><div class="opt" onclick="check(this,0)">B) 20</div><div class="opt" onclick="check(this,0)">C) 2</div>
-<p class="quiz-q">5. π ≈ ?</p><div class="opt" onclick="check(this,1)">A) 3,14</div><div class="opt" onclick="check(this,0)">B) 1,5</div><div class="opt" onclick="check(this,0)">C) 10</div>
-</div>
-
-<div id="quiz-medecine" class="quiz-block hidden">
-<p class="quiz-q">1. Coeur sert à ?</p><div class="opt" onclick="check(this,1)">A) Pomper le sang</div><div class="opt" onclick="check(this,0)">B) Digérer</div><div class="opt" onclick="check(this,0)">C) Penser</div>
-<p class="quiz-q">2. Nb os adulte ?</p><div class="opt" onclick="check(this,0)">A) 100</div><div class="opt" onclick="check(this,1)">B) 206</div><div class="opt" onclick="check(this,0)">C) 500</div>
-<p class="quiz-q">3. Stéthoscope = ?</p><div class="opt" onclick="check(this,1)">A) Écouter le coeur</div><div class="opt" onclick="check(this,0)">B) Couper</div><div class="opt" onclick="check(this,0)">C) Mesurer</div>
-<p class="quiz-q">4. Sang rouge transporte ?</p><div class="opt" onclick="check(this,1)">A) Oxygène</div><div class="opt" onclick="check(this,0)">B) Eau</div><div class="opt" onclick="check(this,0)">C) Sucre</div>
-<p class="quiz-q">5. Fièvre = ?</p><div class="opt" onclick="check(this,1)">A) Température haute</div><div class="opt" onclick="check(this,0)">B) Faim</div><div class="opt" onclick="check(this,0)">C) Fatigue</div>
-</div>
-
-<div id="score" class="score">Score : 0 / 5</div>
-<button class="btn btn-gold" onclick="resetQuiz()">🔄 RECOMMENCER</button>
-</section>
-
-<!-- CHOSES INTERESSANTES 3 : FICHES + ANNALES -->
-<section>
-<h2>📄 Fiches + Annales</h2>
-<div class="card"><h3>📄 Fiche Droit - GRATUITE</h3><p>1 page définitions, à apprendre par coeur.</p><p class="price">GRATUIT</p><a class="btn btn-dark" href="mailto:rastizy2007@gmail.com?subject=Je%20veux%20la%20Fiche%20Droit%20gratuite">📥 DEMANDER PAR EMAIL</a></div>
-<div class="card lock"><h3>📄 Pack Annales 2024 + Corrigés</h3><p>Droit + Éco + Anglais. Annales + corrigés détaillés.</p><p class="price">PREMIUM 1.000F</p><a class="btn btn-gold" href="#premium">🔓 DÉBLOQUER - 1.000F</a></div>
-<div class="card lock"><h3>📄 Fiches Médecine + Maths</h3><p>Formules, schémas, mémo express.</p><p class="price">Inclus PREMIUM</p><a class="btn btn-gold" href="#premium">🔓 VOIR PREMIUM</a></div>
-</section>
-
-<!-- CHOSES INTERESSANTES 4 : PREMIUM + CODES -->
-<section id="premium">
-<h2>👑 PREMIUM - 1.000F / Mois</h2>
-<div class="card" style="border:2px solid #ff9a00"><h3>🔥 PREMIUM</h3><p>✅ Tous les quiz<br>✅ Toutes les fiches<br>✅ Annales 2024 + corrigés<br>✅ Nouveaux cours chaque semaine</p><p class="price">1.000 FCFA / mois</p>
-<label>Ton prénom :</label><input id="nom" placeholder="Ex: Awa">
-<label>Ta filière :</label><select id="filiere"><option>Droit</option><option>Éco</option><option>Anglais</option><option>Maths</option><option>Médecine</option></select>
-<label>Ton code d'accès (si tu en as déjà un) :</label><input id="codeClient" placeholder="Ex: CAMPUS-XXXX">
-<button class="btn btn-gold" onclick="payer()">💳 PAYER 1.000F - FLOOZ / T-MONEY</button>
-<button class="btn btn-dark" onclick="verifierCode()">🔓 J'AI DÉJÀ UN CODE - DÉBLOQUER</button>
-</div>
-</section>
-
-<!-- CHOSES INTERESSANTES 5 : TOP ÉTUDIANTS + AVIS -->
-<section>
-<h2>🏆 Top Étudiants de la Semaine</h2>
-<div class="card"><h3>🥇 Awa - Droit - 5/5</h3><p>"J'ai eu 18 à mon devoir grâce à COURS CAMPUS !"</p></div>
-<div class="card"><h3>🥈 Kossi - Éco - 5/5</h3><p>"Les quiz sont trop faciles, j'ai tout compris !"</p></div>
-<div class="card"><h3>🥉 Marie - Médecine - 4/5</h3><p>"Je révise chaque soir avec les fiches."</p></div>
-</section>
-
-<!-- CONTACT : SEULEMENT WHATSAPP + EMAIL -->
-<section>
-<h2>📍 Nous Contacter</h2>
-<p class="desc">Seulement 2 moyens. Pas de Facebook, pas d'Instagram, pas de TikTok.</p>
-<a class="btn" href="https://wa.me/22897528950?text=Bonjour%20COURS%20CAMPUS">💬 WhatsApp - 97 52 89 50</a>
-<a class="btn btn-mail" href="mailto:rastizy2007@gmail.com?subject=COURS%20CAMPUS">✉️ Email - rastizy2007@gmail.com</a>
-<p style="text-align:center;color:#aaa;margin-top:10px">Lomé - Aného, Togo 🇹🇬</p>
-</section>
-
-<!-- PAGE SECRÈTE ADIKA -->
-<section id="adminSection" class="hidden">
-<h2>🔐 PAGE SECRÈTE ADIKA - CRÉER DES CODES</h2>
-<div class="admin-box">
-<p style="color:#00ff88">Bienvenue Chef ! Crée un code pour un client qui a payé.</p>
-<label>Prénom du client :</label><input id="clientNom" placeholder="Ex: Awa">
-<label>Filière :</label><select id="clientFiliere"><option>Droit</option><option>Éco</option><option>Anglais</option><option>Maths</option><option>Médecine</option><option>TOUT - PREMIUM</option></select>
-<label>Durée :</label><select id="clientDuree"><option value="30">30 jours - 1.000F</option><option value="90">90 jours - 2.500F</option></select>
-<button class="btn btn-gold" onclick="creerCode()">✨ CRÉER LE CODE</button>
-<div id="codeResult" class="code-out hidden">CODE ICI</div>
-<p id="codeInfo"></p>
-<button class="btn btn-dark" onclick="copierCode()">📋 COPIER LE CODE</button>
-</div>
-</section>
-
-<footer>
-<p>© 2026 COURS CAMPUS - By ADIKA</p>
-<p>WhatsApp : 97 52 89 50 - Email : rastizy2007@gmail.com</p>
-</footer>
-
-<script src="script.js"></script>
+<script>
+const cours = {
+droit: `<h2>⚖️ DROIT - Leçon 1 : Introduction au Droit</h2><p><b>Objectif :</b> Comprendre ce qu'est le Droit.</p><h4>1. C'est quoi le Droit ?</h4><p>Le Droit est l'ensemble des règles qui organisent la vie en société. Il dit ce qui est permis, interdit et obligatoire. Sans Droit, c'est l'anarchie.</p><h4>2. La règle de droit</h4><ul><li><b>Générale :</b> Elle s'applique à tout le monde, pas à une seule personne.</li><li><b>Obligatoire :</b> On doit la respecter, sinon sanction.</li><li><b>Sanctionnée par l'État :</b> C'est l'État qui punit.</li></ul><h4>3. Exemple concret au Togo</h4><p>Le Code de la route dit : tu dois t'arrêter au feu rouge. Si tu ne respectes pas, la police te donne une amende. C'est ça, une règle de droit.</p><div class="quiz"><b>📝 Quiz :</b> Quelle est la différence entre une règle de morale et une règle de droit ?<br><i>Réponse : La règle de droit est sanctionnée par l'État, la morale non.</i></div>`,
+eco: `<h2>📊 ÉCONOMIE - Leçon 1 : Microéconomie - La Rareté</h2><p><b>Objectif :</b> Comprendre pourquoi l'économie existe.</p><h4>1. Le problème économique</h4><p>Les besoins des humains sont illimités, mais les ressources sont limitées. C'est ça la <b>rareté</b>. Exemple : Tu as 5000 FCFA, tu veux un habit à 8000 FCFA et un livre à 3000 FCFA. Tu ne peux pas tout acheter, tu dois choisir.</p><h4>2. Le coût d'opportunité</h4><p>Quand tu choisis une chose, tu renonces à une autre. Si tu achètes le livre, le coût d'opportunité c'est l'habit que tu n'as pas acheté.</p><h4>3. Les 3 questions de l'économie</h4><ul><li>Quoi produire ?</li><li>Comment produire ?</li><li>Pour qui produire ?</li></ul><div class="quiz"><b>📝 Quiz :</b> Tu as 10000 FCFA. Tu hésites entre un téléphone et payer ton inscription. C'est quoi le coût d'opportunité si tu choisis le téléphone ?<br><i>Réponse : Ton inscription.</i></div>`,
+info: `<h2>💻 INFORMATIQUE - Leçon 1 : Algorithmique</h2><p><b>Objectif :</b> Comprendre ce qu'est un algorithme.</p><h4>1. C'est quoi un algorithme ?</h4><p>Un algorithme c'est une suite d'étapes claires pour résoudre un problème. Comme une recette de cuisine. Exemple : Pour faire du thé, tu suis des étapes : 1. Mettre l'eau, 2. Chauffer, 3. Mettre le thé, 4. Servir.</p><h4>2. Exemple : Calculer la moyenne</h4><ul><li>Étape 1 : Demander les 2 notes</li><li>Étape 2 : Additionner les notes</li><li>Étape 3 : Diviser par 2</li><li>Étape 4 : Afficher le résultat</li></ul><h4>3. Les 3 structures</h4><p><b>Séquence</b> (étape par étape), <b>Condition</b> (Si... Alors...), <b>Boucle</b> (Répéter tant que...)</p><div class="quiz"><b>📝 Quiz :</b> Écris l'algorithme pour vérifier si un étudiant a validé (moyenne >= 10).<br><i>Réponse : Si moyenne >= 10 Alors Afficher "Validé" Sinon Afficher "Ajourné".</i></div>`,
+lettres: `<h2>📖 LETTRES - Leçon 1 : Linguistique - Langage, Langue, Parole</h2><p><b>Objectif :</b> Faire la différence entre ces 3 notions de Saussure.</p><h4>1. Le Langage</h4><p>C'est la capacité que tous les humains ont de communiquer. Les animaux n'ont pas de langage comme nous.</p><h4>2. La Langue</h4><p>C'est un système précis : le Français, l'Anglais, l'Ewe, le Mina. C'est un code partagé par un groupe.</p><h4>3. La Parole</h4><p>C'est quand TOI tu parles, tu utilises la langue à ta façon. Exemple : Quand tu dis "Ça va poto ?", c'est ta parole.</p><div class="quiz"><b>📝 Quiz :</b> Le Mina est-il une langue ou un langage ?<br><i>Réponse : C'est une langue, car c'est un système précis parlé par un peuple.</i></div>`,
+sciences: `<h2>🔬 SCIENCES - Leçon 1 : Logique & Ensembles</h2><p><b>Objectif :</b> Maîtriser les bases des maths de Licence 1.</p><h4>1. C'est quoi un ensemble ?</h4><p>Un ensemble c'est un regroupement d'objets. Exemple : L'ensemble des étudiants de la Licence 1 Droit. On note A = {Ali, Awa, Kofi...}</p><h4>2. Les opérations</h4><ul><li><b>Union (U) :</b> Tout ce qui est dans A OU dans B.</li><li><b>Intersection (∩) :</b> Ce qui est dans A ET dans B.</li><li><b>Complémentaire :</b> Ce qui n'est PAS dans A.</li></ul><h4>3. Exemple</h4><p>A = {1,2,3}, B = {3,4,5}. Alors A U B = {1,2,3,4,5} et A ∩ B = {3}.</p><div class="quiz"><b>📝 Quiz :</b> A={1,2}, B={2,3}. C'est quoi A ∩ B ?<br><i>Réponse : {2}</i></div>`,
+medecine: `<h2>🩺 MÉDECINE - Leçon 1 : La Cellule</h2><p><b>Objectif :</b> Comprendre la base de la vie.</p><h4>1. C'est quoi une cellule ?</h4><p>La cellule est la plus petite unité de la vie. Ton corps a environ 37 000 milliards de cellules ! C'est comme des petites briques qui construisent ton corps.</p><h4>2. Les 3 parties principales</h4><ul><li><b>Membrane :</b> La peau de la cellule, elle protège.</li><li><b>Cytoplasme :</b> Le liquide à l'intérieur où tout se passe.</li><li><b>Noyau :</b> Le cerveau de la cellule, il contient l'ADN.</li></ul><h4>3. Exemple</h4><p>Les globules rouges sont des cellules qui transportent l'oxygène dans ton sang. Sans elles, tu ne peux pas respirer.</p><div class="quiz"><b>📝 Quiz :</b> Où se trouve l'ADN dans la cellule ?<br><i>Réponse : Dans le noyau.</i></div>`
+};
+function openLesson(k){document.getElementById('home').style.display='none';document.getElementById('lesson').style.display='block';document.getElementById('content').innerHTML=cours[k];window.scrollTo(0,0)}
+function goHome(){document.getElementById('lesson').style.display='none';document.getElementById('home').style.display='grid'}
+</script>
 </body>
 </html>

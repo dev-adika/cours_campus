@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>COURS CAMPUS - By ADIKA</title>
 <style>
-/* COURS CAMPUS - By ADIKA - TOUT EN BLEU 💙 */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
 body { background:#050a1a; color:#fff; padding:15px; padding-bottom:60px; }
 a { text-decoration:none; }
-.header { text-align:center; padding:25px 10px; background:linear-gradient(135deg,#00aaff,#0066ff,#0044cc); color:#fff; border-radius:18px; margin-bottom:15px; box-shadow:0 5px 20px rgba(0,102,255,0.4); }
-.header h1 { font-size:28px; letter-spacing:1px; }
+.header { text-align:center; padding:25px 10px; background:linear-gradient(135deg,#00aaff,#0066ff,#0044cc); color:#fff; border-radius:18px; margin-bottom:15px; }
+.header h1 { font-size:28px; }
 .header p { font-weight:600; margin-top:5px; }
 .badge { display:inline-block; background:#fff; color:#0066ff; padding:6px 14px; border-radius:20px; font-size:12px; margin-top:10px; font-weight:800; }
 .pay-box { background:#0d1a3a; border:2px solid #00aaff; padding:18px; border-radius:16px; text-align:center; margin-bottom:15px; }
@@ -19,12 +18,11 @@ a { text-decoration:none; }
 .pay-box small { display:block; margin-top:12px; color:#aaa; line-height:1.6; font-size:13px; }
 .btn { display:block; width:100%; padding:14px; border:none; border-radius:12px; font-weight:800; font-size:15px; cursor:pointer; text-align:center; }
 .btn-whatsapp { background:#25D366; color:#fff; }
-.btn-yellow { background:#0066ff; color:#fff; margin-top:10px; box-shadow:0 4px 15px rgba(0,102,255,0.4); }
+.btn-yellow { background:#0066ff; color:#fff; margin-top:10px; }
 .btn-gen { background:#00d26a; color:#fff; margin:15px 0; }
 .btn-copy { background:#fff; color:#0066ff; margin-top:10px; font-weight:800; }
 .btn-back { background:#333; color:#fff; padding:12px 20px; border:none; border-radius:10px; margin-top:20px; cursor:pointer; width:100%; font-weight:700; }
 .code-box { background:#0d1a3a; padding:18px; border-radius:16px; margin-bottom:20px; text-align:center; border:1px solid #1a3a7a; }
-.code-box b { color:#fff; }
 .code-box input, .admin-page input { width:100%; padding:14px; border-radius:10px; border:2px solid #1a3a7a; background:#050a1a; color:#fff; margin:12px 0 0; font-size:16px; text-align:center; text-transform:uppercase; outline:none; }
 .code-box input:focus { border-color:#00aaff; }
 #msg { margin-top:12px; font-weight:700; min-height:20px; }
@@ -37,20 +35,16 @@ a { text-decoration:none; }
 .card h3 { font-size:14px; margin:8px 0 4px; color:#00aaff; }
 .card p { font-size:12px; color:#aaa; }
 .cours { display:none; background:#0d1a3a; padding:18px; border-radius:16px; margin-bottom:20px; border:1px solid #1a3a7a; }
-.cours.show { display:block; }
 .cours h3 { color:#00aaff; margin-bottom:12px; }
 .cours-item { display:flex; justify-content:space-between; align-items:center; background:#0a1230; padding:13px; border-radius:10px; margin-bottom:8px; font-size:14px; }
-.lock { font-size:18px; }
 .small { text-align:center; color:#777; font-size:12px; margin-top:30px; }
 .admin-link { text-align:center; margin-top:10px; }
 .admin-link a { color:#444; font-size:12px; }
 .admin-page { display:none; max-width:500px; margin:0 auto; padding:20px; }
-.admin-page.show { display:block; }
 .admin-page h2 { color:#00aaff; text-align:center; margin-bottom:5px; }
 .admin-sub { text-align:center; color:#aaa; font-size:13px; margin-bottom:15px; }
 #adminZone { display:none; margin-top:20px; background:#0d1a3a; padding:18px; border-radius:16px; border:1px solid #1a3a7a; }
-#adminZone h3 { margin-bottom:10px; font-size:16px; }
-.code-gen { display:none; background:#00aaff; color:#fff; font-weight:900; font-size:22px; text-align:center; padding:15px; border-radius:12px; letter-spacing:1px; }
+.code-gen { display:none; background:#00aaff; color:#fff; font-weight:900; font-size:22px; text-align:center; padding:15px; border-radius:12px; }
 #listCodes { background:#050a1a; padding:15px; border-radius:12px; font-size:13px; line-height:2; word-break:break-all; color:#ddd; }
 </style>
 </head>
@@ -72,7 +66,7 @@ a { text-decoration:none; }
 
   <section class="code-box">
     <b>🔓 TU AS DÉJÀ TON CODE ?</b>
-    <input id="codeInput" placeholder="Ex: CAMPUS-5829 ou RASTIZY228" autocomplete="off">
+    <input id="codeInput" placeholder="Ex: CAMPUS-5829" autocomplete="off">
     <button class="btn btn-yellow" onclick="checkCode()">DÉBLOQUER MES COURS PRO ✅</button>
     <p id="msg"></p>
     <p>Statut : <b id="status">🔒 MODE GRATUIT</b></p>
@@ -90,50 +84,49 @@ a { text-decoration:none; }
 
   <div id="droit" class="cours"><h3>⚖️ DROIT - FDD</h3>
     <div class="cours-item"><span>✅ Droit Civil - Gratuit</span><span>▶️</span></div>
-    <div class="cours-item"><span>🔒 Droit Pénal - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Droit Constitutionnel - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Droit des Affaires - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Droit Pénal - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Droit Constitutionnel - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Droit des Affaires - PRO</span><span>🔒</span></div>
   </div>
 
   <div id="eco" class="cours"><h3>💰 ÉCO / GESTION - FASEG</h3>
     <div class="cours-item"><span>✅ Économie Générale - Gratuit</span><span>▶️</span></div>
-    <div class="cours-item"><span>🔒 Comptabilité - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Gestion - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Statistiques - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Marketing - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Comptabilité - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Gestion - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Statistiques - PRO</span><span>🔒</span></div>
   </div>
 
   <div id="lettres" class="cours"><h3>📖 LETTRES - FLESH</h3>
     <div class="cours-item"><span>✅ Français - Gratuit</span><span>▶️</span></div>
-    <div class="cours-item"><span>🔒 Anglais - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Histoire-Géo - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Philosophie - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Anglais - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Histoire-Géo - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Philosophie - PRO</span><span>🔒</span></div>
   </div>
 
   <div id="sciences" class="cours"><h3>🔬 SCIENCES - FDS</h3>
     <div class="cours-item"><span>✅ Maths - Gratuit</span><span>▶️</span></div>
-    <div class="cours-item"><span>🔒 Physique-Chimie - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Biologie / SVT - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Physique-Chimie - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Biologie / SVT - PRO</span><span>🔒</span></div>
   </div>
 
   <div id="medecine" class="cours"><h3>🩺 MÉDECINE - FSS</h3>
     <div class="cours-item"><span>✅ Biologie Médicale - Gratuit</span><span>▶️</span></div>
-    <div class="cours-item"><span>🔒 Anatomie - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Anatomie - PRO</span><span>🔒</span></div>
   </div>
 
   <div id="info" class="cours"><h3>💻 INFO / ANGLAIS</h3>
     <div class="cours-item"><span>✅ Word / Excel - Gratuit</span><span>▶️</span></div>
-    <div class="cours-item"><span>🔒 Anglais Campus - PRO</span><span class="lock">🔒</span></div>
-    <div class="cours-item"><span>🔒 Méthodologie Mémoire - PRO</span><span class="lock">🔒</span></div>
+    <div class="cours-item"><span>🔒 Anglais Campus - PRO</span><span>🔒</span></div>
+    <div class="cours-item"><span>🔒 Méthodologie Mémoire - PRO</span><span>🔒</span></div>
   </div>
 
   <p class="small">COURS CAMPUS © ADIKA - Lomé, Togo • Flooz : 97 52 89 50</p>
-  <div class="admin-link"><a href="#" onclick="showAdmin()">Admin - Patron seulement</a></div>
+  <div class="admin-link"><a href="#" onclick="showAdmin();return false;">Admin - Patron seulement</a></div>
 </main>
 
 <div id="admin" class="admin-page">
   <h2>🔐 ADMIN - PATRON ADIKA</h2>
-  <p class="admin-sub">Mot de passe : ADIKA123</p>
+  <p class="admin-sub">Zone privée</p>
   <input id="adminPass" type="password" placeholder="Mot de passe">
   <button class="btn btn-yellow" onclick="loginAdmin()">ENTRER</button>
   <div id="adminZone">
@@ -141,85 +134,71 @@ a { text-decoration:none; }
     <button class="btn btn-gen" onclick="genCode()">+ CRÉER UN CODE</button>
     <div id="newCode" class="code-gen"></div>
     <button id="copyBtn" class="btn btn-copy" onclick="copyCode()" style="display:none">📋 COPIER LE CODE</button>
-    <p class="admin-sub">Copie et envoie sur WhatsApp après paiement Flooz ! Valable 30 jours.</p>
-    <h3>📋 Codes déjà créés : <span id="countCodes"></span></h3>
+    <p class="admin-sub">Valable 30 jours.</p>
+    <h3>📋 Codes clients : <span id="countCodes"></span></h3>
     <div id="listCodes"></div>
     <button onclick="backMain()" class="btn-back">← Retour au site</button>
   </div>
 </div>
 
 <script>
-// COURS CAMPUS - V3 - By ADIKA - 30 JOURS PAR PERSONNE - TOUT EN BLEU
-const STORAGE_KEY = 'campus_codes_v3';
-const UNLOCK_KEY = 'campus_unlocked_v3';
+const STORAGE_KEY = 'campus_codes_v4';
+const UNLOCK_KEY = 'campus_unlocked_v4';
 const CODE_PATRON = 'RASTIZY228';
-
 let validCodes = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 let unlocked = localStorage.getItem(UNLOCK_KEY) === 'yes';
 let lastCode = '';
-
 if(validCodes.length === 0){
-  validCodes = [
-    { code: 'CAMPUS-1001', date: Date.now() },
-    { code: 'CAMPUS-1002', date: Date.now() }
-  ];
+  validCodes = [{ code:'CAMPUS-1001', date:Date.now() },{ code:'CAMPUS-1002', date:Date.now() }];
   localStorage.setItem(STORAGE_KEY, JSON.stringify(validCodes));
 }
 
 function showFiliere(id){
-  document.querySelectorAll('.cours').forEach(e=>e.classList.remove('show'));
-  document.getElementById(id).classList.add('show');
-  window.scrollTo({top:600,behavior:'smooth'});
+  var all = document.querySelectorAll('.cours');
+  for(var i=0;i<all.length;i++){ all[i].style.display='none'; }
+  var el = document.getElementById(id);
+  if(el){ el.style.display='block'; el.scrollIntoView({behavior:'smooth'}); }
   updateLocks();
 }
 
 function checkCode(){
-  const c = document.getElementById('codeInput').value.trim().toUpperCase();
-  const msg = document.getElementById('msg');
+  var c = document.getElementById('codeInput').value.trim().toUpperCase();
+  var msg = document.getElementById('msg');
   if(c === CODE_PATRON){
-    localStorage.setItem(UNLOCK_KEY,'yes');
-    unlocked = true;
-    msg.innerHTML = '👑 BIENVENUE PATRON RASTIZY228 ! Accès à vie débloqué ! ❤️';
+    localStorage.setItem(UNLOCK_KEY,'yes'); unlocked=true;
+    msg.innerHTML = '👑 BIENVENUE PATRON ! Accès à vie débloqué !';
     document.getElementById('status').innerHTML = '👑 MODE PATRON - À VIE';
-    updateLocks();
-    return;
+    updateLocks(); return;
   }
-  const trouve = validCodes.find(x => x.code === c);
-  if(!trouve){
-    msg.innerHTML = '❌ Code faux ! Paie 1000F Flooz pour avoir ton code.';
-    return;
-  }
-  const maintenant = Date.now();
-  const difference = maintenant - trouve.date;
-  const trenteJours = 30 * 24 * 60 * 60 * 1000;
-  if(difference > trenteJours){
-    msg.innerHTML = '⏰ Ton code de 30 jours est fini ! Repaie 1000F pour un nouveau code.';
-    return;
-  }
-  const joursRestants = Math.ceil((trenteJours - difference) / (24*60*60*1000));
-  localStorage.setItem(UNLOCK_KEY,'yes');
-  unlocked = true;
-  msg.innerHTML = '✅ CODE BON ! Il te reste ' + joursRestants + ' jours ! Bienvenue PRO ❤️';
-  document.getElementById('status').innerHTML = '✅ MODE PRO - Reste ' + joursRestants + ' jours';
+  var trouve = null;
+  for(var i=0;i<validCodes.length;i++){ if(validCodes[i].code===c){ trouve=validCodes[i]; break; } }
+  if(!trouve){ msg.innerHTML='❌ Code faux ! Paie 1000F Flooz pour avoir ton code.'; return; }
+  var trenteJours = 30*24*60*60*1000;
+  var diff = Date.now() - trouve.date;
+  if(diff > trenteJours){ msg.innerHTML='⏰ Ton code de 30 jours est fini ! Repaie 1000F.'; return; }
+  var reste = Math.ceil((trenteJours-diff)/(24*60*60*1000));
+  localStorage.setItem(UNLOCK_KEY,'yes'); unlocked=true;
+  msg.innerHTML='✅ CODE BON ! Il te reste '+reste+' jours !';
+  document.getElementById('status').innerHTML='✅ MODE PRO - Reste '+reste+' jours';
   updateLocks();
 }
 
 function updateLocks(){
   if(!unlocked) return;
-  document.querySelectorAll('.lock').forEach(e=>e.innerHTML='✅');
-  document.querySelectorAll('.cours-item').forEach(e=>{
-    if(e.innerHTML.includes('PRO') && !e.innerHTML.includes('DÉBLOQUÉ')){
-      e.innerHTML = e.innerHTML.replace('🔒','✅').replace('PRO','PRO DÉBLOQUÉ');
+  var items = document.querySelectorAll('.cours-item');
+  for(var i=0;i<items.length;i++){
+    if(items[i].innerHTML.indexOf('PRO')!==-1 && items[i].innerHTML.indexOf('DÉBLOQUÉ')===-1){
+      items[i].innerHTML = items[i].innerHTML.replace('🔒','✅').replace('PRO','PRO DÉBLOQUÉ');
     }
-  });
+  }
 }
 
 function showAdmin(){
   document.getElementById('main').style.display='none';
-  document.getElementById('admin').classList.add('show');
+  document.getElementById('admin').style.display='block';
 }
 function backMain(){
-  document.getElementById('admin').classList.remove('show');
+  document.getElementById('admin').style.display='none';
   document.getElementById('main').style.display='block';
 }
 function loginAdmin(){
@@ -229,32 +208,33 @@ function loginAdmin(){
   } else alert('Mot de passe faux !');
 }
 function genCode(){
-  const code = 'CAMPUS-' + Math.floor(1000+Math.random()*9000);
+  var code = 'CAMPUS-' + Math.floor(1000+Math.random()*9000);
   lastCode = code;
-  validCodes.push({ code: code, date: Date.now() });
+  validCodes.push({ code:code, date:Date.now() });
   localStorage.setItem(STORAGE_KEY, JSON.stringify(validCodes));
-  const el = document.getElementById('newCode');
+  var el = document.getElementById('newCode');
   el.style.display='block';
-  el.textContent = code + ' - Valable 30 jours à partir d\'aujourd\'hui';
+  el.textContent = code;
   document.getElementById('copyBtn').style.display='block';
   renderCodes();
 }
 function copyCode(){
   if(!lastCode) return;
-  navigator.clipboard.writeText(lastCode).then(()=> alert('Code copié ! ✅ : ' + lastCode));
+  navigator.clipboard.writeText(lastCode).then(function(){ alert('Code copié ! ✅ : '+lastCode); });
 }
 function renderCodes(){
-  const trenteJours = 30 * 24 * 60 * 60 * 1000;
-  const maintenant = Date.now();
-  let html = '<div style="background:#00aaff;color:#fff;padding:10px;border-radius:10px;margin-bottom:10px;"><b>👑 TON CODE PATRON : RASTIZY228</b><br>Ne s\'expire jamais - Ne le donne à personne !</div>';
-  html += validCodes.map(obj=>{
-    const reste = Math.ceil((trenteJours - (maintenant - obj.date)) / (24*60*60*1000));
-    const dateCree = new Date(obj.date).toLocaleDateString('fr-FR');
-    if(reste <= 0){ return '• ' + obj.code + ' - ⏰ EXPIRÉ - créé le ' + dateCree; }
-    else { return '• ' + obj.code + ' - créé le ' + dateCree + ' - reste ' + reste + ' jours'; }
-  }).join('<br>');
+  var trenteJours = 30*24*60*60*1000;
+  var maintenant = Date.now();
+  var html = '';
+  for(var i=0;i<validCodes.length;i++){
+    var obj = validCodes[i];
+    var reste = Math.ceil((trenteJours-(maintenant-obj.date))/(24*60*60*1000));
+    var d = new Date(obj.date).toLocaleDateString('fr-FR');
+    if(reste<=0) html += '• '+obj.code+' - ⏰ EXPIRÉ - '+d+'<br>';
+    else html += '• '+obj.code+' - '+d+' - reste '+reste+' jours<br>';
+  }
   document.getElementById('listCodes').innerHTML = html;
-  document.getElementById('countCodes').textContent = '(' + validCodes.length + ')';
+  document.getElementById('countCodes').textContent = '('+validCodes.length+')';
 }
 updateLocks();
 </script>
